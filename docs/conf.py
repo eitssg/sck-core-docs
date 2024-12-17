@@ -29,22 +29,26 @@
 # ones.
 
 import sys
-import os
+
+# import os
 from core_docs import __version__
 
 # import sphinx_rtd_theme  # type: ignore
 
-base = os.path.join("D:\\", "Development", "multi-cloud-deployment-toolkit")
+# base = os.path.abspath(os.path.join(os.path.abspath(__file__), "..", "..", ".."))
 
-module_list = ["core-framework"]
+# module_list = [
+#     "core-framework",
+#     "core-db"
+# ]
 
-# Using a lambda function to insert paths
-list(
-    map(
-        lambda key: sys.path.insert(0, os.path.join(base, key)),
-        module_list,
-    )
-)
+# # Using a lambda function to insert paths
+# list(
+#     map(
+#         lambda key: sys.path.insert(0, os.path.join(base, key)),
+#         module_list,
+#     )
+# )
 
 for p in sys.path:
     print(p)
@@ -75,6 +79,13 @@ extensions = [
 ]
 
 autosummary_generate = True
+
+# Optional: Configure napoleon to use Google style docstrings
+napoleon_google_docstring = True
+napoleon_numpy_docstring = False
+
+# Optional: Configure autodoc to include type hints
+autodoc_typehints = "description"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]

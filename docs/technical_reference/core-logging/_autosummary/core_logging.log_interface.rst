@@ -1,5 +1,5 @@
-﻿core\_logging.log\_interface
-============================
+﻿core_logging.log_interface
+==========================
 
 .. automodule:: core_logging.log_interface
 

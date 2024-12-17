@@ -76,19 +76,19 @@ reference = "nexus"
 
 [[package]]
 name = "attrs"
-version = "24.2.0"
+version = "24.3.0"
 description = "Classes Without Boilerplate"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "attrs-24.2.0-py3-none-any.whl", hash = "sha256:81921eb96de3191c8258c199618104dd27ac608d9366f5e35d011eae1867ede2"},
-    {file = "attrs-24.2.0.tar.gz", hash = "sha256:5cfb1b9148b5b086569baec03f20d7b6bf3bcacc9a42bebf87ffaaca362f6346"},
+    {file = "attrs-24.3.0-py3-none-any.whl", hash = "sha256:ac96cd038792094f438ad1f6ff80837353805ac950cd2aa0e0625ef19850c308"},
+    {file = "attrs-24.3.0.tar.gz", hash = "sha256:8f5c07333d543103541ba7be0e2ce16eeee8130cb0b3f9238ab904ce1e85baff"},
 ]
 
 [package.extras]
 benchmark = ["cloudpickle", "hypothesis", "mypy (>=1.11.1)", "pympler", "pytest (>=4.3.0)", "pytest-codspeed", "pytest-mypy-plugins", "pytest-xdist[psutil]"]
 cov = ["cloudpickle", "coverage[toml] (>=5.3)", "hypothesis", "mypy (>=1.11.1)", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins", "pytest-xdist[psutil]"]
-dev = ["cloudpickle", "hypothesis", "mypy (>=1.11.1)", "pre-commit", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins", "pytest-xdist[psutil]"]
+dev = ["cloudpickle", "hypothesis", "mypy (>=1.11.1)", "pre-commit-uv", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins", "pytest-xdist[psutil]"]
 docs = ["cogapp", "furo", "myst-parser", "sphinx", "sphinx-notfound-page", "sphinxcontrib-towncrier", "towncrier (<24.7)"]
 tests = ["cloudpickle", "hypothesis", "mypy (>=1.11.1)", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins", "pytest-xdist[psutil]"]
 tests-mypy = ["mypy (>=1.11.1)", "pytest-mypy-plugins"]
@@ -219,17 +219,17 @@ reference = "nexus"
 
 [[package]]
 name = "boto3"
-version = "1.35.81"
+version = "1.35.82"
 description = "The AWS SDK for Python"
 optional = false
 python-versions = ">= 3.8"
 files = [
-    {file = "boto3-1.35.81-py3-none-any.whl", hash = "sha256:742941b2424c0223d2d94a08c3485462fa7c58d816b62ca80f08e555243acee1"},
-    {file = "boto3-1.35.81.tar.gz", hash = "sha256:d2e95fa06f095b8e0c545dd678c6269d253809b2997c30f5ce8a956c410b4e86"},
+    {file = "boto3-1.35.82-py3-none-any.whl", hash = "sha256:c422b68ae76959b9e23b77eb79e41c3483332f7e1de918d2b083c456d8cf234c"},
+    {file = "boto3-1.35.82.tar.gz", hash = "sha256:2bbaf1551b1ed55770cb437d7040f1abe6742601103695057b30ce6328eef286"},
 ]
 
 [package.dependencies]
-botocore = ">=1.35.81,<1.36.0"
+botocore = ">=1.35.82,<1.36.0"
 jmespath = ">=0.7.1,<2.0.0"
 s3transfer = ">=0.10.0,<0.11.0"
 
@@ -243,13 +243,13 @@ reference = "nexus"
 
 [[package]]
 name = "botocore"
-version = "1.35.81"
+version = "1.35.82"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">= 3.8"
 files = [
-    {file = "botocore-1.35.81-py3-none-any.whl", hash = "sha256:a7b13bbd959bf2d6f38f681676aab408be01974c46802ab997617b51399239f7"},
-    {file = "botocore-1.35.81.tar.gz", hash = "sha256:564c2478e50179e0b766e6a87e5e0cdd35e1bc37eb375c1cf15511f5dd13600d"},
+    {file = "botocore-1.35.82-py3-none-any.whl", hash = "sha256:e43b97d8cbf19d35ce3a177f144bd97cc370f0a67d0984c7d7cf105ac198748f"},
+    {file = "botocore-1.35.82.tar.gz", hash = "sha256:78dd7bf8f49616d00073698d7bbaf5a115208fe730b7b7afae4456adddb3552e"},
 ]
 
 [package.dependencies]
@@ -350,13 +350,13 @@ reference = "nexus"
 
 [[package]]
 name = "certifi"
-version = "2024.8.30"
+version = "2024.12.14"
 description = "Python package for providing Mozilla's CA Bundle."
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "certifi-2024.8.30-py3-none-any.whl", hash = "sha256:922820b53db7a7257ffbda3f597266d435245903d80737e34f8a45ff3e3230d8"},
-    {file = "certifi-2024.8.30.tar.gz", hash = "sha256:bec941d2aa8195e248a60b31ff9f0558284cf01a52591ceda73ea9afffd69fd9"},
+    {file = "certifi-2024.12.14-py3-none-any.whl", hash = "sha256:1275f7a45be9464efc1173084eaa30f866fe2e47d389406136d332ed4967ec56"},
+    {file = "certifi-2024.12.14.tar.gz", hash = "sha256:b650d30f370c2b724812bee08008be0c4163b163ddaec3f2546c1caf65f191db"},
 ]
 
 [package.source]
@@ -450,13 +450,13 @@ reference = "nexus"
 
 [[package]]
 name = "cfn-lint"
-version = "1.22.1"
+version = "1.22.2"
 description = "Checks CloudFormation templates for practices and behaviour that could potentially be improved"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "cfn_lint-1.22.1-py3-none-any.whl", hash = "sha256:33f976cdbc4cdeaf9d939821e906baac91e615588574aecaa7033811297496a9"},
-    {file = "cfn_lint-1.22.1.tar.gz", hash = "sha256:11085a8196ca1f381735782b4977be62a5860e26d3e0b578d2d4a244b9031b16"},
+    {file = "cfn_lint-1.22.2-py3-none-any.whl", hash = "sha256:dd8f575f3cec51f07940fd2564a20a68377937ccac2d0c25b7f94713a7ccbad2"},
+    {file = "cfn_lint-1.22.2.tar.gz", hash = "sha256:83b3fb9ada7caf94bc75b4bf13999371f74aae39bad92280fd8c9d114ba4006c"},
 ]
 
 [package.dependencies]
@@ -671,6 +671,26 @@ files = [
 type = "legacy"
 url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple"
 reference = "nexus"
+
+[[package]]
+name = "core-db"
+version = "0.1.0"
+description = ""
+optional = false
+python-versions = "^3.12"
+files = []
+develop = true
+
+[package.dependencies]
+boto3 = "^1.35.79"
+core-framework = {path = "../core-framework", develop = true}
+poetry-dynamic-versioning = "^1.4.1"
+pydantic = "^2.10.3"
+pynamodb = "^6.0.1"
+
+[package.source]
+type = "directory"
+url = "../core-db"
 
 [[package]]
 name = "core-framework"
@@ -951,6 +971,25 @@ fastimport = ["fastimport"]
 https = ["urllib3 (>=1.24.1)"]
 paramiko = ["paramiko"]
 pgp = ["gpg"]
+
+[package.source]
+type = "legacy"
+url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple"
+reference = "nexus"
+
+[[package]]
+name = "dunamai"
+version = "1.23.0"
+description = "Dynamic version generation"
+optional = false
+python-versions = ">=3.5"
+files = [
+    {file = "dunamai-1.23.0-py3-none-any.whl", hash = "sha256:a0906d876e92441793c6a423e16a4802752e723e9c9a5aabdc5535df02dbe041"},
+    {file = "dunamai-1.23.0.tar.gz", hash = "sha256:a163746de7ea5acb6dacdab3a6ad621ebc612ed1e528aaa8beedb8887fccd2c4"},
+]
+
+[package.dependencies]
+packaging = ">=20.9"
 
 [package.source]
 type = "legacy"
@@ -1999,6 +2038,25 @@ url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple"
 reference = "nexus"
 
 [[package]]
+name = "pockets"
+version = "0.9.1"
+description = "A collection of helpful Python tools!"
+optional = false
+python-versions = "*"
+files = [
+    {file = "pockets-0.9.1-py2.py3-none-any.whl", hash = "sha256:68597934193c08a08eb2bf6a1d85593f627c22f9b065cc727a4f03f669d96d86"},
+    {file = "pockets-0.9.1.tar.gz", hash = "sha256:9320f1a3c6f7a9133fe3b571f283bcf3353cd70249025ae8d618e40e9f7e92b3"},
+]
+
+[package.dependencies]
+six = ">=1.5.2"
+
+[package.source]
+type = "legacy"
+url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple"
+reference = "nexus"
+
+[[package]]
 name = "poetry"
 version = "1.8.5"
 description = "Python dependency management and packaging made easy."
@@ -2048,6 +2106,30 @@ files = [
     {file = "poetry_core-1.9.1-py3-none-any.whl", hash = "sha256:6f45dd3598e0de8d9b0367360253d4c5d4d0110c8f5c71120a14f0e0f116c1a0"},
     {file = "poetry_core-1.9.1.tar.gz", hash = "sha256:7a2d49214bf58b4f17f99d6891d947a9836c9899a67a5069f52d7b67217f61b8"},
 ]
+
+[package.source]
+type = "legacy"
+url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple"
+reference = "nexus"
+
+[[package]]
+name = "poetry-dynamic-versioning"
+version = "1.4.1"
+description = "Plugin for Poetry to enable dynamic versioning based on VCS tags"
+optional = false
+python-versions = ">=3.7,<4.0"
+files = [
+    {file = "poetry_dynamic_versioning-1.4.1-py3-none-any.whl", hash = "sha256:44866ccbf869849d32baed4fc5fadf97f786180d8efa1719c88bf17a471bd663"},
+    {file = "poetry_dynamic_versioning-1.4.1.tar.gz", hash = "sha256:21584d21ca405aa7d83d23d38372e3c11da664a8742995bdd517577e8676d0e1"},
+]
+
+[package.dependencies]
+dunamai = ">=1.21.0,<2.0.0"
+jinja2 = ">=2.11.1,<4"
+tomlkit = ">=0.4"
+
+[package.extras]
+plugin = ["poetry (>=1.2.0,<2.0.0)"]
 
 [package.source]
 type = "legacy"
@@ -2319,6 +2401,28 @@ files = [
 
 [package.extras]
 windows-terminal = ["colorama (>=0.4.6)"]
+
+[package.source]
+type = "legacy"
+url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple"
+reference = "nexus"
+
+[[package]]
+name = "pynamodb"
+version = "6.0.1"
+description = "A Pythonic Interface to DynamoDB"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "pynamodb-6.0.1-py3-none-any.whl", hash = "sha256:c7aacedcf0cbebd14f9ea7e9347f86459b280ec9506ff34ea5981ffdc02d2d59"},
+    {file = "pynamodb-6.0.1.tar.gz", hash = "sha256:53692d35d5b3fe01e085f260166c869a750a280d40c6af7d48fd67623777faaa"},
+]
+
+[package.dependencies]
+botocore = ">=1.12.54"
+
+[package.extras]
+signals = ["blinker (>=1.3,<2.0)"]
 
 [package.source]
 type = "legacy"
@@ -3587,6 +3691,26 @@ url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple"
 reference = "nexus"
 
 [[package]]
+name = "sphinxcontrib-napoleon"
+version = "0.7"
+description = "Sphinx \"napoleon\" extension."
+optional = false
+python-versions = "*"
+files = [
+    {file = "sphinxcontrib-napoleon-0.7.tar.gz", hash = "sha256:407382beed396e9f2d7f3043fad6afda95719204a1e1a231ac865f40abcbfcf8"},
+    {file = "sphinxcontrib_napoleon-0.7-py2.py3-none-any.whl", hash = "sha256:711e41a3974bdf110a484aec4c1a556799eb0b3f3b897521a018ad7e2db13fef"},
+]
+
+[package.dependencies]
+pockets = ">=0.3"
+six = ">=1.5.2"
+
+[package.source]
+type = "legacy"
+url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple"
+reference = "nexus"
+
+[[package]]
 name = "sphinxcontrib-openapi"
 version = "0.8.4"
 description = "OpenAPI (fka Swagger) spec renderer for Sphinx"
@@ -3655,20 +3779,20 @@ reference = "nexus"
 
 [[package]]
 name = "starlette"
-version = "0.41.3"
+version = "0.42.0"
 description = "The little ASGI library that shines."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "starlette-0.41.3-py3-none-any.whl", hash = "sha256:44cedb2b7c77a9de33a8b74b2b90e9f50d11fcf25d8270ea525ad71a25374ff7"},
-    {file = "starlette-0.41.3.tar.gz", hash = "sha256:0e4ab3d16522a255be6b28260b938eae2482f98ce5cc934cb08dce8dc3ba5835"},
+    {file = "starlette-0.42.0-py3-none-any.whl", hash = "sha256:02f877201a3d6d301714b5c72f15cac305ea5cc9e213c4b46a5af7eecad0d625"},
+    {file = "starlette-0.42.0.tar.gz", hash = "sha256:91f1fbd612f3e3d821a8a5f46bf381afe2a9722a7b8bbde1c07fb83384c2882a"},
 ]
 
 [package.dependencies]
 anyio = ">=3.4.0,<5"
 
 [package.extras]
-full = ["httpx (>=0.22.0)", "itsdangerous", "jinja2", "python-multipart (>=0.0.7)", "pyyaml"]
+full = ["httpx (>=0.27.0,<0.29.0)", "itsdangerous", "jinja2", "python-multipart (>=0.0.18)", "pyyaml"]
 
 [package.source]
 type = "legacy"
@@ -3846,13 +3970,13 @@ reference = "nexus"
 
 [[package]]
 name = "uvicorn"
-version = "0.32.1"
+version = "0.34.0"
 description = "The lightning-fast ASGI server."
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 files = [
-    {file = "uvicorn-0.32.1-py3-none-any.whl", hash = "sha256:82ad92fd58da0d12af7482ecdb5f2470a04c9c9a53ced65b9bbb4a205377602e"},
-    {file = "uvicorn-0.32.1.tar.gz", hash = "sha256:ee9519c246a72b1c084cea8d3b44ed6026e78a4a309cbedae9c37e4cb9fbb175"},
+    {file = "uvicorn-0.34.0-py3-none-any.whl", hash = "sha256:023dc038422502fa28a09c7a30bf2b6991512da7dcdb8fd35fe57cfc154126f4"},
+    {file = "uvicorn-0.34.0.tar.gz", hash = "sha256:404051050cd7e905de2c9a7e61790943440b3416f49cb409f965d9dcd0fa73e9"},
 ]
 
 [package.dependencies]
@@ -4144,4 +4268,4 @@ reference = "nexus"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "0747cfac59f796ae510d3342a73b56623486d8f6529d98182ddf28fcce26b76a"
+content-hash = "a20972ebe41c3f74512dadb9b6d8ea56fb5a9360d43b3e79245a34a43c80f3f9"

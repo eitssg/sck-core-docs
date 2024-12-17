@@ -124,7 +124,7 @@ def main():
         type=str,
         help="Command to perform:\n"
         "   docs: build the docuenataton\n"
-        "   deploy: deploy documentation to web site"
+        "   deploy: deploy documentation to web site",
     )
 
     parser.add_argument(

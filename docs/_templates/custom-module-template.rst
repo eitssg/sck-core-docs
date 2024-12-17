@@ -1,4 +1,5 @@
-{{ fullname | escape | underline}}
+{{ fullname }}
+{{ "=" * (fullname | length) }}
 
 .. automodule:: {{ fullname }}
 
@@ -59,8 +60,9 @@
    :toctree:
    :template: custom-module-template.rst
    :recursive:
-{% for item in modules %}
-   {{ item }}
-{%- endfor %}
+   {% for item in modules %}
+      {{ item }}
+   {%- endfor %}
+
 {% endif %}
 {% endblock %}
