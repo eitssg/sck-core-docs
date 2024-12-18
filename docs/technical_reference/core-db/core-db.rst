@@ -45,3 +45,10 @@ The database schema can be found :ref:`here...<database_schema>`
    :recursive:
 
    core_db.constants
+
+.. autosummary::
+   :toctree: _autosummary
+   :template: custom-module-template.rst
+   :recursive:
+
+   core_db.dbhelper
