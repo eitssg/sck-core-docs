@@ -29,11 +29,16 @@
 # ones.
 
 import sys
+import os
 
 # import os
 from core_docs import __version__
 
-# import sphinx_rtd_theme  # type: ignore
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
+
+from my_pygments_style import MyCustomStyle  # noqa: F401, E402
+
+# import sphinx_rtd_theme
 
 # base = os.path.abspath(os.path.join(os.path.abspath(__file__), "..", "..", ".."))
 
@@ -66,35 +71,45 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
     "sphinx.ext.napoleon",
-    "sphinx_autodoc_typehints",
-    "sphinxcontrib.httpdomain",
-    "sphinxcontrib.openapi",
+    # "sphinxcontrib.httpdomain",
+    # "sphinxcontrib.openapi",
     "sphinx.ext.viewcode",
     "sphinx.ext.todo",
-    "sphinx.ext.githubpages",
+    # "sphinx.ext.githubpages",
     "sphinx_rtd_theme",
     "myst_parser",
-    "sphinx.ext.intersphinx",
-    "esbonio.relevant_to",
+    # "sphinx.ext.intersphinx",
+    # "sphinx_autodoc_typehints",
 ]
 
 autosummary_generate = True
-
-# Optional: Configure napoleon to use Google style docstrings
 napoleon_google_docstring = True
 napoleon_numpy_docstring = False
+# napoleon_include_init_with_doc = False
+# napoleon_include_private_with_doc = False
+# napoleon_include_special_with_doc = True
+# napoleon_use_admonition_for_examples = False
+# napoleon_use_admonition_for_notes = False
+# napoleon_use_admonition_for_references = False
+# napoleon_use_ivar = False
+# napoleon_use_param = True
+# napoleon_use_rtype = True
+# napoleon_preprocess_types = False
+# napoleon_type_aliases = None
+napoleon_attr_annotations = False
 
-# Optional: Configure autodoc to include type hints
-autodoc_typehints = "description"
+# autodoc_default_options = {
+#    'members': True,
+#    'undoc-members': True,
+#    'private-members': True,
+#    'special-members': True,
+#    'inherited-members': True,
+#    'show-inheritance': True,
+# }
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
-
-# The suffix(es) of source filenames.
-# You can specify multiple suffix as a list of string:
-#
-# source_suffix = ['.rst', '.md']
-source_suffix = ".rst"
+source_suffix = [".rst", ".md"]
 
 # The master toctree document.
 master_doc = "index"
@@ -128,7 +143,8 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = "monokai"
+# pygments_style = "monokai"
+pygments_style = "my_pygments_style.MyCustomStyle"
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True

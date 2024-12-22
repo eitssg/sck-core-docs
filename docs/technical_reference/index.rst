@@ -5,5 +5,4 @@ Technical Reference Guide
    :caption: Contents:
 
    modules
-   core-db/registry_db_schema
-   core-db/client_db_schema
+   core-db/db_schema
