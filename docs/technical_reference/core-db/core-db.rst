@@ -9,8 +9,8 @@ the application infrastucture deployments.
 
 The database schema can be found :ref:`here...<database_schema>`
 
-Core DB Base Models
--------------------
+Base Models
+-----------
 
 .. autosummary::
    :toctree: _autosummary

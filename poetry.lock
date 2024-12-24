@@ -658,7 +658,7 @@ reference = "nexus"
 
 [[package]]
 name = "core-db"
-version = "0.0.1-pre.8+25b197e"
+version = "0.0.1-pre.12+915a6e6"
 description = ""
 optional = false
 python-versions = "^3.12"
@@ -677,8 +677,27 @@ type = "directory"
 url = "../core-db"
 
 [[package]]
+name = "core-execute"
+version = "0.0.1-pre.9+d6867d5"
+description = "Core Automation Engine execute Lambda function"
+optional = false
+python-versions = "^3.12"
+files = []
+develop = true
+
+[package.dependencies]
+core-db = {path = "../core-db", develop = true}
+core-framework = {path = "../core-framework", develop = true}
+PyYAML = "^6.0.2"
+pyyaml-include = "^2.1"
+
+[package.source]
+type = "directory"
+url = "../core-execute"
+
+[[package]]
 name = "core-framework"
-version = "0.0.1-pre.10+4cd4772"
+version = "0.0.1-pre.18+66cac8a"
 description = "Core-Framework for Core-Automation"
 optional = false
 python-versions = "^3.12"
@@ -700,6 +719,26 @@ ruamel-yaml = "^0.18.6"
 [package.source]
 type = "directory"
 url = "../core-framework"
+
+[[package]]
+name = "core-runner"
+version = "0.0.1-pre.2+6ea8c5f"
+description = "Core Automation Runner Lambda function"
+optional = false
+python-versions = "^3.12"
+files = []
+develop = true
+
+[package.dependencies]
+core-db = {path = "../core-db", develop = true}
+core-execute = {path = "../core-execute", develop = true}
+core-framework = {path = "../core-framework", develop = true}
+PyYAML = "^6.0.2"
+pyyaml-include = "^2.1"
+
+[package.source]
+type = "directory"
+url = "../core-runner"
 
 [[package]]
 name = "crashtest"
@@ -3716,13 +3755,13 @@ reference = "nexus"
 
 [[package]]
 name = "types-setuptools"
-version = "75.6.0.20241126"
+version = "75.6.0.20241223"
 description = "Typing stubs for setuptools"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "types_setuptools-75.6.0.20241126-py3-none-any.whl", hash = "sha256:aaae310a0e27033c1da8457d4d26ac673b0c8a0de7272d6d4708e263f2ea3b9b"},
-    {file = "types_setuptools-75.6.0.20241126.tar.gz", hash = "sha256:7bf25ad4be39740e469f9268b6beddda6e088891fa5a27e985c6ce68bf62ace0"},
+    {file = "types_setuptools-75.6.0.20241223-py3-none-any.whl", hash = "sha256:7cbfd3bf2944f88bbcdd321b86ddd878232a277be95d44c78a53585d78ebc2f6"},
+    {file = "types_setuptools-75.6.0.20241223.tar.gz", hash = "sha256:d9478a985057ed48a994c707f548e55aababa85fe1c9b212f43ab5a1fffd3211"},
 ]
 
 [package.source]
@@ -3748,13 +3787,13 @@ reference = "nexus"
 
 [[package]]
 name = "urllib3"
-version = "2.2.3"
+version = "2.3.0"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 files = [
-    {file = "urllib3-2.2.3-py3-none-any.whl", hash = "sha256:ca899ca043dcb1bafa3e262d73aa25c465bfb49e0bd9dd5d59f1d0acba2f8fac"},
-    {file = "urllib3-2.2.3.tar.gz", hash = "sha256:e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"},
+    {file = "urllib3-2.3.0-py3-none-any.whl", hash = "sha256:1cee9ad369867bfdbbb48b7dd50374c0967a0bb7710050facf0dd6911440e3df"},
+    {file = "urllib3-2.3.0.tar.gz", hash = "sha256:f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"},
 ]
 
 [package.extras]
@@ -4068,4 +4107,4 @@ reference = "nexus"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "04e3b7b5633d60d6518bc4cee7ec14d25a567c723711ddadd5cd306126018c3a"
+content-hash = "bf9e81785af1689daa1fc062a1d287b13e71a4d5c8a14ad672ae150a2c012b65"

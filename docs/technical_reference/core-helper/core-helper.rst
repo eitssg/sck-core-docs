@@ -7,6 +7,9 @@ Core helper provides tools for access AWS using boto3.  The idea is to provide w
 of boilerplate code that is used to access AWS services.  This includes switchig roles for each of
 the lambda functions that provide security and limits blast radius.
 
+AWS Helper functions
+--------------------
+
 .. autosummary::
    :toctree: _autosummary
    :template: custom-module-template.rst

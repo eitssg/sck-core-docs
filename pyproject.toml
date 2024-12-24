@@ -22,6 +22,8 @@ sphinxcontrib-openapi = "^0.8.4"
 sphinxcontrib-napoleon = "^0.7"
 core-framework = { path = "../core-framework", develop = true }
 core-db = { path = "../core-db", develop = true }
+core-execute = { path = "../core-execute", develop = true }
+core-runner = { path = "../core-runner", develop = true }
 
 [[tool.poetry.source]]
 name = "nexus"
