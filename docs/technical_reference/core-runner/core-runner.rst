@@ -14,4 +14,4 @@ Runner
    :template: custom-module-template.rst
    :recursive:
 
-    core_runner.handler
+    core_runner

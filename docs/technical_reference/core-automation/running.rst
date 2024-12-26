@@ -77,6 +77,6 @@ If you wish to output all file content to a container mounted volume, you can se
 
     CLIENT=sample
     LOCAL_MODE=true
-    STORE_VOLUME=/opt/data/core
+    VOLUME=/opt/data/core
 
 And by adding the CLIENT and LOCAL_MODE in the .env file, you can run the command without the --client and --mode flags:
