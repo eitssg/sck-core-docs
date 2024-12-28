@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "sck-core-docs"
-version = "0.1.0"
+version = "0.0.1"
 description = "Documentation for Core Automation"
 authors = ["James Barwick <jbarwick@me.com>"]
 license = "GPL-3.0-only"
 readme = "README.md"
 
-keywords = ["simple-cloud-kit", "core-automation", "core", "sck", "docs"]
+keywords = ["sck", "core", "aws", "cloud", "automation"]
 
 include = ["user-guide/*", "developer-guide/*", "api-guide/*", "locale/**/LC_MESSAGES/*.po", "locale/**/LC_MESSAGES/*.mo"]
 
@@ -24,14 +24,17 @@ sphinx_design = "^0.6.1"
 sphinxcontrib-openapi = "^0.8.4"
 sphinxcontrib-napoleon = "^0.7"
 
-sck-core-framework = { path = "../sck-core-framework", develop = true }
-sck-core-db = { path = "../sck-core-db", develop = true }
-sck-core-execute = { path = "../sck-core-execute", develop = true }
-sck-core-runner = { path = "../sck-core-runner", develop = true }
-sck-core-invoker = { path = "../sck-core-invoker", develop = true }
-sck-core-api = { path = "../sck-core-api", develop = true }
-sck-core-component = { path = "../sck-core-component", develop = true }
-sck-core-deployspec = { path = "../sck-core-deployspec", develop = true }
+sck-core-framework = "^0.0.1"
+sck-core-db = "^0.0.1"
+sck-core-execute = "^0.0.1"
+sck-core-runner = "^0.0.1"
+sck-core-invoker = "^0.0.1"
+sck-core-api = "^0.0.1"
+sck-core-component = "^0.0.1"
+sck-core-deployspec = "^0.0.1"
+sck-core-organization = "^0.0.1"
+sck-core-cli = "^0.0.1"
+sck-core-docker = "^0.0.1"
 
 [[tool.poetry.source]]
 name = "nexus"
@@ -39,7 +42,7 @@ url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple/"
 priority = "primary"
 
 [tool.poetry.group.dev.dependencies]
-websockets = { version = "*", optional = true }
+websockets = "{ version = \"*\", optional = true }"
 sphinx-autodoc-typehints = "^2.5.0"
 sphinxcontrib-httpdomain = "^1.8.1"
 sphinx-autobuild = "^2024.10.3"
