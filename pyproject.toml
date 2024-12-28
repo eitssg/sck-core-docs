@@ -34,43 +34,43 @@ sphinxcontrib-napoleon = "^0.7"
 
 [tool.poetry.dependencies.sck-core-cli]
 path = "../sck-core-cli"
-depend = true
+develop = true
 
 [tool.poetry.dependencies.sck-core-api]
 path = "../sck-core-api"
-depend = true
+develop = true
 
 [tool.poetry.dependencies.sck-core-organization]
 path = "../sck-core-organization"
-depend = true
+develop = true
 
 [tool.poetry.dependencies.sck-core-invoker]
 path = "../sck-core-invoker"
-depend = true
+develop = true
 
 [tool.poetry.dependencies.sck-core-deployspec]
 path = "../sck-core-deployspec"
-depend = true
+develop = true
 
 [tool.poetry.dependencies.sck-core-component]
 path = "../sck-core-component"
-depend = true
+develop = true
 
 [tool.poetry.dependencies.sck-core-runner]
 path = "../sck-core-runner"
-depend = true
+develop = true
 
 [tool.poetry.dependencies.sck-core-execute]
 path = "../sck-core-execute"
-depend = true
+develop = true
 
 [tool.poetry.dependencies.sck-core-db]
 path = "../sck-core-db"
-depend = true
+develop = true
 
 [tool.poetry.dependencies.sck-core-framework]
 path = "../sck-core-framework"
-depend = true
+develop = true
 [[tool.poetry.source]]
 name = "nexus"
 url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple/"
