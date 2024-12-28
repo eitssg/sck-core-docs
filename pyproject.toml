@@ -8,7 +8,14 @@ readme = "README.md"
 
 keywords = ["sck", "core", "aws", "cloud", "automation"]
 
-include = ["user-guide/*", "developer-guide/*", "api-guide/*", "locale/**/LC_MESSAGES/*.po", "locale/**/LC_MESSAGES/*.mo"]
+include = [
+  "user-guide/*",
+  "developer-guide/*",
+  "api-guide/*",
+  "locale/**/LC_MESSAGES/*.po",
+  "locale/**/LC_MESSAGES/*.mo",
+  "core_docs/_version.py",
+]
 
 [[tool.poetry.packages]]
 include = "core_docs"
