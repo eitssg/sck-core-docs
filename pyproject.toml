@@ -77,7 +77,7 @@ url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple/"
 priority = "primary"
 
 [tool.poetry.group.dev.dependencies]
-websockets = "{ version = \"*\", optional = true }"
+websockets = "^14.1"
 sphinx-autodoc-typehints = "^2.5.0"
 sphinxcontrib-httpdomain = "^1.8.1"
 sphinx-autobuild = "^2024.10.3"
