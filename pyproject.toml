@@ -14,7 +14,6 @@ include = [
   "api-guide/*",
   "locale/**/LC_MESSAGES/*.po",
   "locale/**/LC_MESSAGES/*.mo",
-  "core_docs/_version.py",
 ]
 
 [[tool.poetry.packages]]
@@ -67,19 +66,12 @@ bump = true
 ignore-untracked = true
 style = "semver"
 
+[tool.poetry-dynamic-versioning.substitution]
+files = ["core_docs/__init__.py"]
+
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
 build-backend = "poetry_dynamic_versioning.backend"
-
-[tool.poetry-dynamic-versioning.files."core_docs/_version.py"]
-persistent-substitution = true
-initial-content = """
-  \"\"\"
-  This is the version informatooin for this template
-  \"\"\"
-  __version__ = "0.0.0"
-  __version_tuple__ = (0, 0, 0)
-"""
 
 # Create script to build.main
 [tool.poetry.scripts]

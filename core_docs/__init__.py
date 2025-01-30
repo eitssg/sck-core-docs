@@ -1,4 +1,5 @@
 from .build import main
-from ._version import __version__
+
+__version__ = "0.0.4"
 
 __all__ = ["main", "__version__"]

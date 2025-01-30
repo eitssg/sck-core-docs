@@ -11,7 +11,7 @@ import shutil
 
 import importlib.metadata
 
-from core_docs._version import __version__
+from core_docs import __version__
 
 # Set up gettext for internationalization
 locale_path = os.path.join(os.path.dirname(__file__), "locale")
