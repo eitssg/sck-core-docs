@@ -154,18 +154,19 @@ reference = "nexus"
 
 [[package]]
 name = "beautifulsoup4"
-version = "4.12.3"
+version = "4.13.1"
 description = "Screen-scraping library"
 optional = false
-python-versions = ">=3.6.0"
+python-versions = ">=3.7.0"
 groups = ["dev"]
 files = [
-    {file = "beautifulsoup4-4.12.3-py3-none-any.whl", hash = "sha256:b80878c9f40111313e55da8ba20bdba06d8fa3969fc68304167741bbf9e082ed"},
-    {file = "beautifulsoup4-4.12.3.tar.gz", hash = "sha256:74e3d1928edc070d21748185c46e3fb33490f22f52a3addee9aee0f4f7781051"},
+    {file = "beautifulsoup4-4.13.1-py3-none-any.whl", hash = "sha256:72465267014897bb10ca749bb632bde6c2d20f3254afd5458544bd74e6c2e6d8"},
+    {file = "beautifulsoup4-4.13.1.tar.gz", hash = "sha256:741c8b6903a1e4ae8ba32b9c9ae7510dab7a197fdbadcf9fcdeb0891ef5ec66a"},
 ]
 
 [package.dependencies]
 soupsieve = ">1.2"
+typing-extensions = ">=4.0.0"
 
 [package.extras]
 cchardet = ["cchardet"]
@@ -231,18 +232,18 @@ reference = "nexus"
 
 [[package]]
 name = "boto3"
-version = "1.36.11"
+version = "1.36.12"
 description = "The AWS SDK for Python"
 optional = false
 python-versions = ">= 3.8"
 groups = ["main", "dev"]
 files = [
-    {file = "boto3-1.36.11-py3-none-any.whl", hash = "sha256:641dd772eac111d9443258f0f5491c57c2af47bddae94a8d32de19edb5bf7b1c"},
-    {file = "boto3-1.36.11.tar.gz", hash = "sha256:b40fbf2c0f22e55b67df95475a68bb72be5169097180a875726b6b884339ac8b"},
+    {file = "boto3-1.36.12-py3-none-any.whl", hash = "sha256:32cdf0967287f3ec25a9dc09df0d29cb86b8900c3e0546a63d672775d8127abf"},
+    {file = "boto3-1.36.12.tar.gz", hash = "sha256:287d84f49bba3255a17b374578127d42b6251e72f55914a62e0ad9ca78c0954b"},
 ]
 
 [package.dependencies]
-botocore = ">=1.36.11,<1.37.0"
+botocore = ">=1.36.12,<1.37.0"
 jmespath = ">=0.7.1,<2.0.0"
 s3transfer = ">=0.11.0,<0.12.0"
 
@@ -256,14 +257,14 @@ reference = "nexus"
 
 [[package]]
 name = "botocore"
-version = "1.36.11"
+version = "1.36.12"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">= 3.8"
 groups = ["main", "dev"]
 files = [
-    {file = "botocore-1.36.11-py3-none-any.whl", hash = "sha256:82c5660027f696608d0e55feb08c146c11c7ebeba7615961c7765dcf6009a00d"},
-    {file = "botocore-1.36.11.tar.gz", hash = "sha256:c919be883f95b9e0c3021429a365d40cd7944b8345a07af30dc8d891ceefe07a"},
+    {file = "botocore-1.36.12-py3-none-any.whl", hash = "sha256:5ae1ed362c8ed908a6ced8cdd12b21e2196c100bc79f9e95c9c1fc7f9ea74f5a"},
+    {file = "botocore-1.36.12.tar.gz", hash = "sha256:86ed88beb4f244c96529435c868d3940073c2774116f0023fb7691f6e7053bd9"},
 ]
 
 [package.dependencies]
@@ -2524,321 +2525,287 @@ reference = "nexus"
 
 [[package]]
 name = "sck-core-api"
-version = "0.0.5"
+version = "0.0.6"
 description = "Core-API for Core-Automation lambda function"
 optional = false
-python-versions = ">=3.12,<4.0"
+python-versions = "^3.12"
 groups = ["main"]
-files = [
-    {file = "sck_core_api-0.0.5-py3-none-any.whl", hash = "sha256:699a0aab8392c81da3428f82dc64e203276075a4fc09222553712b072bf432ac"},
-    {file = "sck_core_api-0.0.5.tar.gz", hash = "sha256:364b68919121b2a9172bed5753f86452010c80dbf08ef3af415d401b15749d69"},
-]
+files = []
+develop = true
 
 [package.dependencies]
 boto3 = ">=1.35.93"
 botocore = ">=1.35.93"
-deepdiff = ">=7.0.1,<8.0.0"
-filters = ">=1.3.2,<2.0.0"
-jinja2 = ">=3.1.4,<4.0.0"
-jmespath = ">=1.0.1,<2.0.0"
-netaddr = ">=1.3.0,<2.0.0"
-pydantic = ">=2.10.3,<3.0.0"
-python-dotenv = ">=1.0.1,<2.0.0"
-pyyaml = ">=6.0.2,<7.0.0"
-pyyaml-include = ">=2.1,<3.0"
-sck-core-db = ">=0.0.5,<0.0.6"
-sck-core-framework = ">=0.0.5,<0.0.6"
-sck-core-invoker = ">=0.0.5,<0.0.6"
-sck-core-organization = ">=0.0.5,<0.0.6"
+deepdiff = "^7.0.1"
+filters = "^1.3.2"
+jinja2 = "^3.1.4"
+jmespath = "^1.0.1"
+netaddr = "^1.3.0"
+pydantic = "^2.10.3"
+python-dotenv = "^1.0.1"
+pyyaml = "^6.0.2"
+pyyaml-include = "^2.1"
+sck-core-db = {path = "../sck-core-db", develop = true}
+sck-core-framework = {path = "../sck-core-framework", develop = true}
+sck-core-invoker = {path = "../sck-core-invoker", develop = true}
+sck-core-organization = {path = "../sck-core-organization", develop = true}
 
 [package.source]
-type = "legacy"
-url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple"
-reference = "nexus"
+type = "directory"
+url = "../sck-core-api"
 
 [[package]]
 name = "sck-core-cli"
-version = "0.0.5"
+version = "0.0.6"
 description = "Core Automation Deployment Engine Tools, SCK Module, and CLI"
 optional = false
-python-versions = ">=3.12,<4.0"
+python-versions = "^3.12"
 groups = ["main"]
-files = [
-    {file = "sck_core_cli-0.0.5-py3-none-any.whl", hash = "sha256:ac1d45d79ef44b56bf72213b298ff363e698780d1fbbffed1d44299e15f152c1"},
-    {file = "sck_core_cli-0.0.5.tar.gz", hash = "sha256:62b41406d031cc0dd0dfcc34516d2b86ae130b2c9811c7f9ad28b2a6be4645f8"},
-]
+files = []
+develop = true
 
 [package.dependencies]
 argcomplete = ">=3.3.0"
 boto3 = ">=1.35.93"
 botocore = ">=1.35.93"
 cfnresponse = ">=1.1.4"
-cryptography = ">=42.0.8,<43.0.0"
-fastapi = ">=0.115.4,<0.116.0"
-httpx = ">=0.28.1,<0.29.0"
-jmespath = ">=1.0.1,<2.0.0"
+cryptography = "^42.0.8"
+fastapi = "^0.115.4"
+httpx = "^0.28.1"
+jmespath = "^1.0.1"
 python-dateutil = ">=2.9.0.post0"
-pyyaml = ">=6.0.2,<7.0.0"
-requests = ">=2.32.3,<3.0.0"
-rich = ">=13.9.4,<14.0.0"
-ruamel-yaml = ">=0.18.10,<0.19.0"
+pyyaml = "^6.0.2"
+requests = "^2.32.3"
+rich = "^13.9.4"
+ruamel-yaml = "^0.18.10"
 s3transfer = ">=0.10.1"
-sck-core-api = ">=0.0.5,<0.0.6"
-sck-core-db = ">=0.0.5,<0.0.6"
-sck-core-framework = ">=0.0.5,<0.0.6"
-sck-core-invoker = ">=0.0.5,<0.0.6"
-sck-core-organization = ">=0.0.5,<0.0.6"
+sck-core-api = {path = "../sck-core-api", develop = true}
+sck-core-db = {path = "../sck-core-db", develop = true}
+sck-core-framework = {path = "../sck-core-framework", develop = true}
+sck-core-invoker = {path = "../sck-core-invoker", develop = true}
+sck-core-organization = {path = "../sck-core-organization", develop = true}
 six = ">=1.16.0"
-urllib3 = ">=2.2.3,<3.0.0"
-uvicorn = ">=0.34.0,<0.35.0"
+urllib3 = "^2.2.3"
+uvicorn = "^0.34.0"
 xmltodict = ">=0.13.0"
 yq = ">=3.4.3"
 
 [package.source]
-type = "legacy"
-url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple"
-reference = "nexus"
+type = "directory"
+url = "../sck-core-cli"
 
 [[package]]
 name = "sck-core-component"
-version = "0.0.5"
+version = "0.0.6"
 description = "Core-Automation Component Compiler"
 optional = false
-python-versions = ">=3.12,<4.0"
+python-versions = "^3.12"
 groups = ["main"]
-files = [
-    {file = "sck_core_component-0.0.5-py3-none-any.whl", hash = "sha256:3886bd642e3695abe36d8eaac470139a657fb7367433d6edb41d3722a94f7716"},
-    {file = "sck_core_component-0.0.5.tar.gz", hash = "sha256:c83025589816f5fdb4861346a93fdec37c0c287e431f23c102beff3c7d9caa29"},
-]
+files = []
+develop = true
 
 [package.dependencies]
 boto3 = ">=1.35.93"
 botocore = ">=1.35.93"
-deepdiff = ">=7.0.1,<8.0.0"
-filters = ">=1.3.2,<2.0.0"
-jinja2 = ">=3.1.4,<4.0.0"
-jmespath = ">=1.0.1,<2.0.0"
-netaddr = ">=1.3.0,<2.0.0"
-pyyaml = ">=6.0.2,<7.0.0"
-pyyaml-include = ">=2.1,<3.0"
-sck-core-db = ">=0.0.5,<0.0.6"
-sck-core-framework = ">=0.0.5,<0.0.6"
+deepdiff = "^7.0.1"
+filters = "^1.3.2"
+jinja2 = "^3.1.4"
+jmespath = "^1.0.1"
+netaddr = "^1.3.0"
+pyyaml = "^6.0.2"
+pyyaml-include = "^2.1"
+sck-core-db = {path = "../sck-core-db", develop = true}
+sck-core-framework = {path = "../sck-core-framework", develop = true}
 
 [package.source]
-type = "legacy"
-url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple"
-reference = "nexus"
+type = "directory"
+url = "../sck-core-component"
 
 [[package]]
 name = "sck-core-db"
-version = "0.0.5"
+version = "0.0.6"
 description = "Core Database Library to access DynamoDB for Core-Automation"
 optional = false
-python-versions = ">=3.12,<4.0"
+python-versions = "^3.12"
 groups = ["main"]
-files = [
-    {file = "sck_core_db-0.0.5-py3-none-any.whl", hash = "sha256:7faa1b76d87527520eedab6075a4e29711dac7eec57fbf1bed64b8764bfa3a48"},
-    {file = "sck_core_db-0.0.5.tar.gz", hash = "sha256:dfd2548d28132cc046a018b183e9a36d6100d2d55df29c3f3f75a901586e6fb6"},
-]
+files = []
+develop = true
 
 [package.dependencies]
 boto3 = ">=1.35.93"
 botocore = ">=1.35.93"
-pydantic = ">=2.10.3,<3.0.0"
-pynamodb = ">=6.0.1,<7.0.0"
-sck-core-framework = ">=0.0.5,<0.0.6"
+pydantic = "^2.10.3"
+pynamodb = "^6.0.1"
+sck-core-framework = {path = "../sck-core-framework", develop = true}
 
 [package.source]
-type = "legacy"
-url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple"
-reference = "nexus"
+type = "directory"
+url = "../sck-core-db"
 
 [[package]]
 name = "sck-core-deployspec"
-version = "0.0.5"
+version = "0.0.6"
 description = "Core Automation Deployspec Actions Compiler lambda function"
 optional = false
-python-versions = ">=3.12,<4.0"
+python-versions = "^3.12"
 groups = ["main"]
-files = [
-    {file = "sck_core_deployspec-0.0.5-py3-none-any.whl", hash = "sha256:0ac91de8df0c8e96c699d2dc7fe2e30868646641d5fda6ab80a07a4c0862b249"},
-    {file = "sck_core_deployspec-0.0.5.tar.gz", hash = "sha256:c1b6ac4669435c2e5f806e6c6113b52a41429373f0adacc7125a2e8f99b0edff"},
-]
+files = []
+develop = true
 
 [package.dependencies]
 boto3 = ">=1.35.93"
 botocore = ">=1.35.93"
-PyYAML = ">=6.0.2,<7.0.0"
-pyyaml-include = ">=2.1,<3.0"
-sck-core-db = ">=0.0.5,<0.0.6"
-sck-core-framework = ">=0.0.5,<0.0.6"
+PyYAML = "^6.0.2"
+pyyaml-include = "^2.1"
+sck-core-db = {path = "../sck-core-db", develop = true}
+sck-core-framework = {path = "../sck-core-framework", develop = true}
 
 [package.source]
-type = "legacy"
-url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple"
-reference = "nexus"
+type = "directory"
+url = "../sck-core-deployspec"
 
 [[package]]
 name = "sck-core-execute"
-version = "0.0.5"
+version = "0.0.6"
 description = "Core Automation Engine execute Lambda function"
 optional = false
-python-versions = ">=3.12,<4.0"
+python-versions = "^3.12"
 groups = ["main"]
-files = [
-    {file = "sck_core_execute-0.0.5-py3-none-any.whl", hash = "sha256:f96b4ad9a594a451b3d9c771a706c590e071d619c8fb49ca9d436e418d588d5f"},
-    {file = "sck_core_execute-0.0.5.tar.gz", hash = "sha256:f53aee00e48b5e6fb907a6e2003351e213de798fa8d5eafd10708f7367904aeb"},
-]
+files = []
+develop = true
 
 [package.dependencies]
 boto3 = ">=1.35.93"
 botocore = ">=1.35.93"
-darkdetect = ">=0.8.0,<0.9.0"
-PyYAML = ">=6.0.2,<7.0.0"
-pyyaml-include = ">=2.1,<3.0"
-rich = ">=13.9.4,<14.0.0"
-sck-core-db = ">=0.0.5,<0.0.6"
-sck-core-framework = ">=0.0.5,<0.0.6"
-sck-core-report = ">=0.0.5,<0.0.6"
+darkdetect = "^0.8.0"
+PyYAML = "^6.0.2"
+pyyaml-include = "^2.1"
+rich = "^13.9.4"
+sck-core-db = {path = "../sck-core-db", develop = true}
+sck-core-framework = {path = "../sck-core-framework", develop = true}
 
 [package.source]
-type = "legacy"
-url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple"
-reference = "nexus"
+type = "directory"
+url = "../sck-core-execute"
 
 [[package]]
 name = "sck-core-framework"
-version = "0.0.5"
+version = "0.0.6"
 description = "Core-Framework for Core-Automation"
 optional = false
-python-versions = ">=3.12,<4.0"
+python-versions = "^3.12"
 groups = ["main"]
-files = [
-    {file = "sck_core_framework-0.0.5-py3-none-any.whl", hash = "sha256:629834b73e5695ae614282040735e4a6e52acbdbc0633ce7747f2a6ce9742f11"},
-    {file = "sck_core_framework-0.0.5.tar.gz", hash = "sha256:a11ed9db71be6b96f88de253ef4d54dce6666640ce1b61e31696503efc9130a6"},
-]
+files = []
+develop = true
 
 [package.dependencies]
 boto3 = ">=1.35.93"
 botocore = ">=1.35.93"
-deepdiff = ">=7.0.1,<8.0.0"
-filters = ">=1.3.2,<2.0.0"
-jinja2 = ">=3.1.4,<4.0.0"
-jmespath = ">=1.0.1,<2.0.0"
-netaddr = ">=1.3.0,<2.0.0"
-python-slugify = ">=8.0.4,<9.0.0"
-pyyaml = ">=6.0.2,<7.0.0"
-pyyaml-include = ">=2.1,<3.0"
-ruamel-yaml = ">=0.18.10,<0.19.0"
+deepdiff = "^7.0.1"
+filters = "^1.3.2"
+jinja2 = "^3.1.4"
+jmespath = "^1.0.1"
+netaddr = "^1.3.0"
+python-slugify = "^8.0.4"
+pyyaml = "^6.0.2"
+pyyaml-include = "^2.1"
+ruamel-yaml = "^0.18.10"
 
 [package.source]
-type = "legacy"
-url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple"
-reference = "nexus"
+type = "directory"
+url = "../sck-core-framework"
 
 [[package]]
 name = "sck-core-invoker"
-version = "0.0.5"
+version = "0.0.6"
 description = "Core Automation Invoker Lambda function"
 optional = false
-python-versions = ">=3.12,<4.0"
+python-versions = "^3.12"
 groups = ["main"]
-files = [
-    {file = "sck_core_invoker-0.0.5-py3-none-any.whl", hash = "sha256:cfda40f9c75e9a67fe27a97ce6fbb62668c40a52e5a3fe44f7036f51142a0e28"},
-    {file = "sck_core_invoker-0.0.5.tar.gz", hash = "sha256:53a22290241c63c001daccbb9d95b31f205c5a51843b789e3a45c8ee338abab7"},
-]
+files = []
+develop = true
 
 [package.dependencies]
 boto3 = ">=1.35.93"
 botocore = ">=1.35.93"
-python-dotenv = ">=1.0.1,<2.0.0"
-PyYAML = ">=6.0.2,<7.0.0"
-pyyaml-include = ">=2.1,<3.0"
-sck-core-component = ">=0.0.5,<0.0.6"
-sck-core-db = ">=0.0.5,<0.0.6"
-sck-core-deployspec = ">=0.0.5,<0.0.6"
-sck-core-execute = ">=0.0.5,<0.0.6"
-sck-core-framework = ">=0.0.5,<0.0.6"
-sck-core-runner = ">=0.0.5,<0.0.6"
+python-dotenv = "^1.0.1"
+PyYAML = "^6.0.2"
+pyyaml-include = "^2.1"
+sck-core-component = {path = "../sck-core-component", develop = true}
+sck-core-db = {path = "../sck-core-db", develop = true}
+sck-core-deployspec = {path = "../sck-core-deployspec", develop = true}
+sck-core-execute = {path = "../sck-core-execute", develop = true}
+sck-core-framework = {path = "../sck-core-framework", develop = true}
+sck-core-runner = {path = "../sck-core-runner", develop = true}
 
 [package.source]
-type = "legacy"
-url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple"
-reference = "nexus"
+type = "directory"
+url = "../sck-core-invoker"
 
 [[package]]
 name = "sck-core-organization"
-version = "0.0.5"
+version = "0.0.6"
 description = "Manage organization resources and service control policy"
 optional = false
-python-versions = ">=3.12,<4.0"
+python-versions = "^3.12"
 groups = ["main"]
-files = [
-    {file = "sck_core_organization-0.0.5-py3-none-any.whl", hash = "sha256:9da498167a591c47faf2f6372bafd00aa2099ddabefb653a38b4d4eeba6fd058"},
-    {file = "sck_core_organization-0.0.5.tar.gz", hash = "sha256:a4a4261d5555fa1328aa50d5c97764a9827709df6ba040fd8968932a42eb6bd8"},
-]
+files = []
+develop = true
 
 [package.dependencies]
 boto3 = ">=1.35.93"
 botocore = ">=1.35.93"
-requests = ">=2.32.3,<3.0.0"
-sck-core-db = ">=0.0.5,<0.0.6"
-sck-core-framework = ">=0.0.5,<0.0.6"
-urllib3 = ">=2.2.3,<3.0.0"
+requests = "^2.32.3"
+sck-core-db = {path = "../sck-core-db", develop = true}
+sck-core-framework = {path = "../sck-core-framework", develop = true}
+urllib3 = "^2.2.3"
 
 [package.source]
-type = "legacy"
-url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple"
-reference = "nexus"
+type = "directory"
+url = "../sck-core-organization"
 
 [[package]]
 name = "sck-core-report"
-version = "0.0.5"
+version = "0.0.6"
 description = "Tool to inspect flow control of stepfunction"
 optional = false
-python-versions = ">=3.12,<4.0"
+python-versions = "^3.12"
 groups = ["main"]
-files = [
-    {file = "sck_core_report-0.0.5-py3-none-any.whl", hash = "sha256:199a64adfb4fba3b72008c0bc3cfb11e875c45acdf94e927ef752ff253ad20ed"},
-    {file = "sck_core_report-0.0.5.tar.gz", hash = "sha256:e7bbfaf3a0ce0906f4ed7a2fbd46de0989a864a2d7ee93ec1a0c1fa5fd7b8f59"},
-]
+files = []
+develop = true
 
 [package.dependencies]
 boto3 = ">=1.35.93"
 botocore = ">=1.35.93"
-sck-core-framework = ">=0.0.5,<0.0.6"
+sck-core-framework = {path = "../sck-core-framework", develop = true}
 
 [package.source]
-type = "legacy"
-url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple"
-reference = "nexus"
+type = "directory"
+url = "../sck-core-report"
 
 [[package]]
 name = "sck-core-runner"
-version = "0.0.5"
+version = "0.0.6"
 description = "Core Automation Runner Lambda function"
 optional = false
-python-versions = ">=3.12,<4.0"
+python-versions = "^3.12"
 groups = ["main"]
-files = [
-    {file = "sck_core_runner-0.0.5-py3-none-any.whl", hash = "sha256:f33e20da480613e3041ddbc7b6d43b2093f184a3477e9b83cded062182ffb0c7"},
-    {file = "sck_core_runner-0.0.5.tar.gz", hash = "sha256:2bf3e2d551c35f6c499a0310130c296d4dd5eb228a7fa44ec6d73626a1877b01"},
-]
+files = []
+develop = true
 
 [package.dependencies]
 boto3 = ">=1.35.93"
 botocore = ">=1.35.93"
-pyyaml = ">=6.0.2,<7.0.0"
-pyyaml-include = ">=2.1,<3.0"
-sck-core-db = ">=0.0.5,<0.0.6"
-sck-core-execute = ">=0.0.5,<0.0.6"
-sck-core-framework = ">=0.0.5,<0.0.6"
-sck-core-report = ">=0.0.5,<0.0.6"
+pyyaml = "^6.0.2"
+pyyaml-include = "^2.1"
+sck-core-db = {path = "../sck-core-db", develop = true}
+sck-core-execute = {path = "../sck-core-execute", develop = true}
+sck-core-framework = {path = "../sck-core-framework", develop = true}
+sck-core-report = {path = "../sck-core-report", develop = true}
 
 [package.source]
-type = "legacy"
-url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple"
-reference = "nexus"
+type = "directory"
+url = "../sck-core-runner"
 
 [[package]]
 name = "six"
@@ -3762,4 +3729,4 @@ reference = "nexus"
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.12"
-content-hash = "85bea9214e5d5c8135960574c16e9b142f47e8ab44c8862df59a66523aaa9555"
+content-hash = "698f3e6340251014cc6b6945f6825be8d76c524a152b5b1f93ce26eba85aa749"
