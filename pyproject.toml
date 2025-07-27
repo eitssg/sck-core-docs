@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sck-core-docs"
-version = "0.0.6"
+version = "0.0.7"
 description = "Documentation for Core Automation"
 authors = ["James Barwick <jbarwick@me.com>"]
 license = "GPL-3.0-only"
@@ -29,47 +29,19 @@ sphinx-rtd-theme = "^3.0.2"
 sphinx_design = "^0.6.1"
 sphinxcontrib-openapi = "^0.8.4"
 sphinxcontrib-napoleon = "^0.7"
+sck-core-framework = "^0.0.7"
+sck-core-db = "^0.0.7"
+sck-core-execute = "^0.0.7"
+sck-core-report = "^0.0.7"
+sck-core-runner = "^0.0.7"
+sck-core-component = "^0.0.7"
+sck-core-deployspec = "^0.0.7"
+sck-core-invoker = "^0.0.7"
+sck-core-organization = "^0.0.7"
+sck-core-api = "^0.0.7"
+sck-core-cli = "^0.0.7"
 
 
-[tool.poetry.dependencies.sck-core-cli]
-path = "../sck-core-cli"
-develop = true
-
-[tool.poetry.dependencies.sck-core-api]
-path = "../sck-core-api"
-develop = true
-
-[tool.poetry.dependencies.sck-core-organization]
-path = "../sck-core-organization"
-develop = true
-
-[tool.poetry.dependencies.sck-core-invoker]
-path = "../sck-core-invoker"
-develop = true
-
-[tool.poetry.dependencies.sck-core-deployspec]
-path = "../sck-core-deployspec"
-develop = true
-
-[tool.poetry.dependencies.sck-core-component]
-path = "../sck-core-component"
-develop = true
-
-[tool.poetry.dependencies.sck-core-runner]
-path = "../sck-core-runner"
-develop = true
-
-[tool.poetry.dependencies.sck-core-execute]
-path = "../sck-core-execute"
-develop = true
-
-[tool.poetry.dependencies.sck-core-db]
-path = "../sck-core-db"
-develop = true
-
-[tool.poetry.dependencies.sck-core-framework]
-path = "../sck-core-framework"
-develop = true
 [[tool.poetry.source]]
 name = "nexus"
 url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple/"
