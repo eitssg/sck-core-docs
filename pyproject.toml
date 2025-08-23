@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sck-core-docs"
-version = "0.0.10"
+version = "0.0.11-pre.2+bce5ee7"
 description = "Documentation for Core Automation"
 authors = ["James Barwick <jbarwick@me.com>"]
 license = "GPL-3.0-only"
