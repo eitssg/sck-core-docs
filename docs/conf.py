@@ -82,18 +82,20 @@ extensions = [
     # "sphinx_autodoc_typehints",
 ]
 
-autosummary_generate = True
+# Napoleon settings for Google style
 napoleon_google_docstring = True
-napoleon_numpy_docstring = False
-# napoleon_include_init_with_doc = False
-# napoleon_include_private_with_doc = False
-# napoleon_include_special_with_doc = True
-# napoleon_use_admonition_for_examples = False
-# napoleon_use_admonition_for_notes = False
-# napoleon_use_admonition_for_references = False
-# napoleon_use_ivar = False
-# napoleon_use_param = True
-# napoleon_use_rtype = True
+napoleon_numpy_docstring = False  # Disable NumPy style
+napoleon_include_init_with_doc = False
+napoleon_include_private_with_doc = False
+napoleon_include_special_with_doc = True
+napoleon_use_admonition_for_examples = False
+napoleon_use_admonition_for_notes = False
+napoleon_use_admonition_for_references = False
+napoleon_use_ivar = False
+napoleon_use_param = True
+napoleon_use_rtype = True
+
+autosummary_generate = True
 # napoleon_preprocess_types = False
 # napoleon_type_aliases = None
 napoleon_attr_annotations = False
@@ -234,9 +236,7 @@ latex_document: list[tuple] = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages: list[tuple] = [
-    (master_doc, "core-automation", "core-automation Documentation", [author], 1)
-]
+man_pages: list[tuple] = [(master_doc, "core-automation", "core-automation Documentation", [author], 1)]
 
 
 # -- Options for Texinfo output -------------------------------------------
