@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sck-core-docs"
-version = "0.0.11-pre.2+bce5ee7"
+version = "0.0.11-pre.3+978e0e9"
 description = "Documentation for Core Automation"
 authors = ["James Barwick <jbarwick@me.com>"]
 license = "GPL-3.0-only"
@@ -74,10 +74,6 @@ develop = true
 [tool.poetry.dependencies.sck-core-framework]
 path = "../sck-core-framework"
 develop = true
-[[tool.poetry.source]]
-name = "nexus"
-url = "https://monster-jj.jvj28.com:9091/repository/pypi/simple/"
-priority = "primary"
 
 [tool.poetry.group.dev.dependencies]
 websockets = "^14.1"
@@ -100,7 +96,7 @@ ignore-untracked = true
 style = "semver"
 
 [tool.poetry-dynamic-versioning.substitution]
-files = ["core_docs/__init__.py"]
+files = ["core_docs/__init__.py", "core_docs/build.py", "docs/conf.py"]
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]

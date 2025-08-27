@@ -32,7 +32,7 @@ import sys
 import os
 
 # import os
-from core_docs import __version__
+__version__ = "0.0.11-pre.3+978e0e9"
 
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
@@ -236,9 +236,7 @@ latex_document: list[tuple] = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages: list[tuple] = [
-    (master_doc, "core-automation", "core-automation Documentation", [author], 1)
-]
+man_pages: list[tuple] = [(master_doc, "core-automation", "core-automation Documentation", [author], 1)]
 
 
 # -- Options for Texinfo output -------------------------------------------

@@ -11,7 +11,7 @@ import shutil
 
 import importlib.metadata
 
-from core_docs import __version__
+__version__ = "0.0.11-pre.3+978e0e9"
 
 # Set up gettext for internationalization
 locale_path = os.path.join(os.path.dirname(__file__), "locale")
@@ -60,19 +60,13 @@ def sphinx_command() -> str | None:
 def build(doc_name: str):
     cmd = sphinx_command()
     if cmd is None:
-        print(
-            "\nThe Sphinx python module was not found. Make sure you have Sphinx installed"
-        )
+        print("\nThe Sphinx python module was not found. Make sure you have Sphinx installed")
         print('\nInstall sphinx with "pip install sphinx"')
         print("See: http://sphinx-doc.org/")
         return
 
-    source_dir = os.path.abspath(
-        os.path.join(os.path.dirname(__file__), "..", doc_name)
-    )
-    destination_dir = os.path.abspath(
-        os.path.join(os.path.dirname(__file__), "..", "build", doc_name)
-    )
+    source_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", doc_name))
+    destination_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "build", doc_name))
 
     # if the desitination dir exists, delete it:
     if os.path.exists(destination_dir):
@@ -122,15 +116,14 @@ def main():
         choices=CHOICES.keys(),
         nargs=1,
         type=str,
-        help="Command to perform:\n"
-        "   docs: build the docuenataton\n"
-        "   deploy: deploy documentation to web site",
+        help="Command to perform:\n" "   docs: build the docuenataton\n" "   deploy: deploy documentation to web site",
     )
 
-    parser.add_argument(
-        "-v", "--version", action="version", version=f"core-docs v{__version__}"
-    )
+    parser.add_argument("-v", "--version", action="version", version=f"core-docs v{__version__}")
     parms = parser.parse_args()
+
+    # Update the version number in the core_docs package
+    run_cmd("poetry-dynamic-versioning")
 
     if parms.command[0] in CHOICES:
         CHOICES.get(parms.command[0])()
