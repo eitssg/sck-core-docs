@@ -6,6 +6,8 @@ Contains the documentation for both
 * developer-guide - those who develop consumables or anyone wanting to know more about how core-automation works.
 * api-guide - instructions for using the RESTful API (Or, JSON API Rather... do we need RESTful?)
 
+> Copilot: See [local instructions](.github/copilot-instructions.md) and [root guidance](../../.github/copilot-instructions.md) for precedence and module rules.
+
 ## Building the Docs
 The documentation contains instructions on how to build the documentation!
 
