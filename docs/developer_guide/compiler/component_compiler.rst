@@ -10,30 +10,36 @@ features
 
     security_rules
 
-main
-====
+component-compiler
+==================
 
-.. automodule:: component_compiler.main
+.. automodule:: core_component
     :members:
     :undoc-members:
 
 compiler
-========
+========    
 
-.. automodule:: component_compiler.compiler
-    :members:
-    :undoc-members:
-
-facter
-======
-
-.. automodule:: _common.facter
+.. automodule:: component_component.compiler
     :members:
     :undoc-members:
 
 preprocessor
 ============
 
-.. automodule:: component_compiler.preprocessor
+.. automodule:: component_component.preprocessor
+    :members:
+    :undoc-members:
+
+validator
+=========
+.. automodule:: component_component.validator
+    :members:
+    :undoc-members:
+
+facter
+======
+
+.. automodule:: core_db.facter
     :members:
     :undoc-members:

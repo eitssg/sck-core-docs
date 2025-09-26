@@ -2,7 +2,7 @@
 Actions
 =======
 
-Run by the :doc:`core_execute` lambda.
+Run by the :doc:`execute` lambda.
 
 actionlib.actions
 =================

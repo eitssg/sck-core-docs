@@ -24,3 +24,10 @@ core-framework
 .. automodule:: core_framework
     :members:
     :undoc-members:
+
+core-helper
+===========
+
+.. automodule:: core_helper
+    :members:
+    :undoc-members:

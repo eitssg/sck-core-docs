@@ -13,7 +13,7 @@ Run from the core-automation repository directory.
 
 .. code-block:: bash
 
-    bash ./bin/run.sh --help
+    core --help
 
 Package, upload, compile, deploy the app
 ----------------------------------------
@@ -22,7 +22,7 @@ Run from the demo-canary repository directory.
 .. code-block:: bash
 
     AWS_PROFILE=abc-automation \
-    bash ../abc-core-automation/bin/run.sh package upload compile deploy -c abc -p demo -a canary -b mybranch -n 1
+    core package upload compile deploy -c abc -p demo -a canary -b mybranch -n 1
 
 * This is the same command run by the CI/CD tool
 * The compile and deploy steps will trigger the deployed Lambdas in AWS
@@ -33,22 +33,21 @@ Local compilation
 
 Getting help
 ------------
-Run from core-automation/lambdas/component_compiler directory.
+Run from core-automation compilers.
 
 .. code-block:: bash
 
-    python3 ./cli.py --help
+    core compile --help
 
 
 Local compile of local files
 ----------------------------
 
 * Will compile the app specified by --app-path
-* Creates a ``_compiled`` directory in the root of app-path with compiled artefacts
 
 .. code-block:: bash
 
-    python3 ./cli.py abc demo canary testing 1 --mode local --app-path ~/workspace/demo-canary
+    core compile -p abc -a demo -b canary -n 1 --mode local --app-path ~/workspace/demo-canary
 
 
 Local compile of S3 files
@@ -88,7 +87,7 @@ Teardown action (wise to run BEFORE, if you're re-deploying the same build numbe
 
 .. code-block:: bash
 
-    python3 simulate.py teardown -c abc -p demo -a canary -b mybranch -n 1 --aws-profile abc-automation
+    core teardown -c abc -p demo -a canary -b mybranch -n 1 --aws-profile abc-automation --dry-run
 
 Where:
 

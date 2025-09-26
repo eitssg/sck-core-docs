@@ -1,6 +1,6 @@
 ============
 Core Execute
-===========
+============
 
 The core_execute Lambda is the main component of the action runner. It is responsible for executing a list of actions. It performs the following tasks:
 

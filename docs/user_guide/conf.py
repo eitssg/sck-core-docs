@@ -238,7 +238,29 @@ html_theme = "sphinx_rtd_theme"
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': False,
+    'collapse_navigation': True,
+    'sticky_navigation': True,
+    'navigation_depth': 4,
+    'includehidden': True,
+    'titles_only': False
+}
+
+# Add context variables for custom footer
+html_context = {
+    'display_github': False,
+    'display_bitbucket': False,
+    'display_gitlab': False,
+    'conf_py_path': '',
+    'source_suffix': '.rst',
+    'library_home_url': '/docs',
+    'manual_title': 'User Guide'
+}
+
+# Custom HTML to append to every page
+html_additional_pages = {}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -246,6 +268,9 @@ html_theme = "sphinx_rtd_theme"
 html_static_path = ["_static"]
 html_css_files = [
     "custom.css",
+]
+html_js_files = [
+    "footer.js",
 ]
 
 # Custom sidebar templates, must be a dictionary that maps document names

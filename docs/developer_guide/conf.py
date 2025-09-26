@@ -159,7 +159,8 @@ source_suffix = [".rst", ".md"]
 # Suppress specific warnings
 suppress_warnings = [
     'autodoc',  # Ignore all autodoc warnings including duplicate object descriptions
-    'toc',      # Ignore toctree warnings  
+    'toc',      # Ignore toctree warnings
+    'docutils', # Ignore RST formatting warnings
 ]
 
 # Setup logging to filter duplicate warnings
@@ -167,7 +168,15 @@ import logging
 
 class DuplicateFilter(logging.Filter):
     def filter(self, record):
-        return 'duplicate object description' not in record.getMessage()
+        message = record.getMessage()
+        # Filter duplicate object descriptions
+        if 'duplicate object description' in message:
+            return False
+        # Filter RST formatting warnings from docstrings
+        if ('Unexpected indentation' in message or 'Block quote ends without a blank line' in message):
+            if ('__init__.py:docstring' in message or 'generate_' in message):
+                return False
+        return True
 
 # Add the filter to the sphinx logger
 sphinx_logger = logging.getLogger('sphinx')
@@ -238,7 +247,29 @@ html_theme = "sphinx_rtd_theme"
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': False,
+    'collapse_navigation': True,
+    'sticky_navigation': True,
+    'navigation_depth': 4,
+    'includehidden': True,
+    'titles_only': False
+}
+
+# Add context variables for custom footer
+html_context = {
+    'display_github': False,
+    'display_bitbucket': False,
+    'display_gitlab': False,
+    'conf_py_path': '',
+    'source_suffix': '.rst',
+    'library_home_url': '/docs',
+    'manual_title': 'Developer Guide'
+}
+
+# Custom HTML to append to every page
+html_additional_pages = {}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -246,6 +277,9 @@ html_theme = "sphinx_rtd_theme"
 html_static_path = ["_static"]
 html_css_files = [
     "custom.css",
+]
+html_js_files = [
+    "footer.js",
 ]
 
 # Custom sidebar templates, must be a dictionary that maps document names

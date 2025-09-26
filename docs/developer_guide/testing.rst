@@ -38,11 +38,10 @@ To test pipeline changes, the compiler lambda has been uplifted to support bette
 
 .. code-block:: bash
 
-	component_compiler$ python3 cli.py -h
-	usage: cli.py [-h] [--mode MODE] [--aws-profile AWS_PROFILE]
-	              [--app-path APP_PATH] [--bucket-region BUCKET_REGION]
-	              [--bucket-name BUCKET_NAME]
-	              portfolio app branch build
+	core compile [-h] [--mode MODE] [--aws-profile AWS_PROFILE]
+                 [--app-path APP_PATH] [--bucket-region BUCKET_REGION]
+	             [--bucket-name BUCKET_NAME]
+	             portfolio app branch build
 
 	Component Compiler for the Action Runner
 
@@ -71,7 +70,7 @@ An example command would look like this:
 .. code-block:: bash
 
 	# Local mode
-	python3 cli.py demo simpleapp staging 1 --mode=local --app-path=../../../demo-simpleapp
+	core compile -p dem -a simpleapp -b staging -n 1 --mode=local --app-path=../../../demo-simpleapp
 
-	# Test mode
-	python3 cli.py demo simpleapp staging 1 --mode=test --aws-profile=core-automation-test --bucket-name=sourced-dev-island-core-automation-ap-southeast-1
+	# Test modedev
+	core compile -p dem -a simpleapp -b staging -n 1 --mode=test --aws-profile=core-automation-test --bucket-name=-dev-core-automation-ap-southeast-1
