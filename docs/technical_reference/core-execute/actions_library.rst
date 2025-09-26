@@ -10,6 +10,7 @@ Actions Library
    actionlib_aws
    actionlib_aws_rds
    actionlib_aws_kms
+   actionlib_system
 
 .. rubric::  actionlib
 
@@ -19,14 +20,21 @@ Actions Library
    :show-inheritance:
    :inherited-members:
 
-.. autosummary::
-   :toctree: _autosummary
-   :template: custom-module-template.rst
-   :recursive:
+.. automodule:: core_execute.actionlib.helper
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
-   core_execute.actionlib.helper
-   core_execute.actionlib.action
-   core_execute.actionlib.factory
+.. automodule:: core_execute.actionlib.action
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: core_execute.actionlib.factory
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 .. rubric:: actionlib.actions
 

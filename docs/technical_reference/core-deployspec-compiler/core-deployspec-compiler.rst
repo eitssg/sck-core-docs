@@ -6,9 +6,7 @@ Infrastructure engineers can elect to build cloudformation templates rather than
 deployment templates.  The core-deployspec-compiler is a lambda function that is used to compile cloudformation
 templates within the same Jinja2 context as the component compiler.
 
-.. autosummary::
-   :toctree: _autosummary
-   :template: custom-module-template.rst
-   :recursive:
-
-   core_deployspec_compiler
+.. automodule:: core_deployspec
+   :members:
+   :undoc-members:
+   :show-inheritance:

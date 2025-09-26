@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sck-core-docs"
-version = "0.1.2-pre.1+19ebde9"
+version = "0.1.2-pre.5+cf10478"
 description = "Documentation for Core Automation"
 authors = ["James Barwick <jbarwick@me.com>"]
 license = "GPL-3.0-only"
@@ -29,6 +29,7 @@ sphinx-rtd-theme = "^3.0.2"
 sphinx_design = "^0.6.1"
 sphinxcontrib-openapi = "^0.8.4"
 sphinxcontrib-napoleon = "^0.7"
+fastapi = "^0.115.4"
 
 
 [tool.poetry.dependencies.sck-core-cli]
@@ -88,6 +89,8 @@ doc8 = "^1.1.2"
 black = "^24.10.0"
 pytest-dotenv = "^0.5.2"
 types-pygments = "^2.18.0.20240506"
+uvicorn = "^0.34.0"
+gunicorn = "^23.0.0"
 
 [tool.poetry-dynamic-versioning]
 enable = true

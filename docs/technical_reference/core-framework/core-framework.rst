@@ -11,44 +11,46 @@ You may find the source for thie core-framework on GitHub at `here https://githu
 Constants
 ---------
 
-.. autosummary::
-   :toctree: _autosummary
-   :template: custom-module-template.rst
-   :recursive:
+.. automodule:: core_framework.constants
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
-   core_framework.constants
-   core_framework.status
-
+.. automodule:: core_framework.status
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 Object Models
 -------------
 
-.. autosummary::
-   :toctree: _autosummary
-   :template: custom-module-template.rst
-   :recursive:
-
-   core_framework.models
+.. automodule:: core_framework.models
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :no-index:
 
 
 Common Functions
 ----------------
 
-.. autosummary::
-   :toctree: _autosummary
-   :template: custom-module-template.rst
-   :recursive:
+.. automodule:: core_framework.common
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
-   core_framework.common
-   core_framework.prn_utils
+
+.. automodule:: core_framework.prn_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 
 Local Execution Magic
 ---------------------
 
-.. autosummary::
-   :toctree: _autosummary
-   :template: custom-module-template.rst
-   :recursive:
-
-   core_framework.magic
+.. automodule:: core_helper.magic
+   :no-index:
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -5,9 +5,8 @@ core-api
 This is a Dual API including a RESTful API using AWS API Gateway as well as a Lambda intrface that
 is easy to use to call directly.
 
-.. autosummary::
-   :toctree: _autosummary
-   :template: custom-module-template.rst
-   :recursive:
-
-   core_api
+.. automodule:: core_api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :synopsis: Core API module providing FastAPI and Lambda interfaces

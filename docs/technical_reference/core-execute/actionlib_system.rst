@@ -3,10 +3,18 @@
 SYSTEM::Actions
 ===============
 
-.. autosummary::
-   :toctree: _autosummary
-   :template: custom-module-template.rst
-   :recursive:
+No Operation Action
+-------------------
 
-   core_execute.actionlib.actions.system.no_op
-   core_execute.actionlib.actions.system.set_variables
+.. automodule:: core_execute.actionlib.actions.system.no_op
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Set Variables Action
+--------------------
+
+.. automodule:: core_execute.actionlib.actions.system.set_variables
+   :members:
+   :undoc-members:
+   :show-inheritance:

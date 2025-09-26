@@ -9,9 +9,7 @@ initiate the Step Function that performs the "deploy", "plan" and "apply" steps.
 Runner
 ------
 
-.. autosummary::
-   :toctree: _autosummary
-   :template: custom-module-template.rst
-   :recursive:
-
-    core_runner
+.. automodule:: core_runner
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,53 +1,115 @@
-# Docs
+# SCK Core Documentation
 
-Contains the documentation for both
+Professional documentation system for Simple Cloud Kit (SCK) Core - a multi-tenant AWS automation framework.
 
-* user-guide - those who use the consumables and are deploying infrastructure
-* developer-guide - those who develop consumables or anyone wanting to know more about how core-automation works.
-* api-guide - instructions for using the RESTful API (Or, JSON API Rather... do we need RESTful?)
+## 📚 Documentation Structure
 
-> Copilot: See [local instructions](.github/copilot-instructions.md) and [root guidance](../../.github/copilot-instructions.md) for precedence and module rules.
+The documentation is organized into four independent manual sets:
 
-## Building the Docs
-The documentation contains instructions on how to build the documentation!
+- **Library** (`docs/library/`) - Main landing page and navigation hub
+- **User Guide** (`docs/user_guide/`) - End-user documentation and tutorials  
+- **Technical Reference** (`docs/technical_reference/`) - API documentation and module references
+- **Developer Guide** (`docs/developer_guide/`) - Contributing and development guidelines
 
-### Set-up
+> **Copilot Note**: See [local instructions](.github/copilot-instructions.md) and [root guidance](../.github/copilot-instructions.md) for development precedence and module rules.
 
-It is assumed that you have checked-out and cloned the multi-cloud-deployoment-toolkit.
+## 🏗️ Build System Architecture
 
-```ps1
-git clone https://github.com/jbarwick/multi-cloud-deployment-toolkit
+### New Multi-Manual Build Process
+
+The `build.ps1` script generates **independent documentation manuals** from RST source files:
+
+```powershell
+# Builds all documentation manuals
+.\build.ps1
+
+# Output structure:
+build/
+├── index.html              # Library landing page (from docs/library/)
+├── user_guide/             # User manual (from docs/user_guide/)
+├── technical_reference/    # API reference (from docs/technical_reference/)  
+└── developer_guide/        # Developer manual (from docs/developer_guide/)
 ```
 
-Change the current working folder to the **multi-cloud-deployment-toolkit\core-docs** folder
+### Build Commands
 
-```ps1
-cd multi-cloud-deployment-toolkit
-cd core-docs
+```powershell
+# Build all documentation manuals
+.\build.ps1
+
+# Start documentation server (serves at http://localhost:8100)  
+.\start.ps1
 ```
 
-Prepare the python environment by executing the prepare.ps1 script.  The script will assume you have access to a pypi repository alredy configured with python and pip
+### Server Architecture
 
-```ps1
-prepare.ps1
+The documentation is served via FastAPI with static file mounting:
+
+- **Root (`/`)**: Redirects to `/docs`
+- **Documentation (`/docs`)**: Serves built HTML from `build/` directory
+- **Navigation**: Professional landing page with links to all manual sections
+
+## 🚀 Quick Start
+
+### Setup Environment
+
+```powershell
+# Clone repository (already done if you're reading this)
+cd sck-core-docs
+
+# Install dependencies (Poetry manages Python environment)
+poetry install
+
+# Activate virtual environment  
+poetry shell
 ```
 
-If you are on linux, then you can run **prepare.sh** bash script
+### Build & Serve Documentation  
 
-### Building the Documentation
+```powershell
+# Build all documentation
+.\build.ps1
 
-Building the documentation is simple.  All you need to do is run the builder.
+# Start documentation server
+.\start.ps1
 
-* Build User's Guide
-
-Execute in the powershell console:
-
-```ps1
-core-docs user
+# Visit: http://localhost:8100
 ```
 
-Build the Developer's Guide
-```ps1
+## 📖 Documentation Development
+
+### Adding New Content
+
+1. **User Guide**: Add RST files to `docs/user_guide/`
+2. **Technical Reference**: Module docs auto-generated from docstrings  
+3. **Developer Guide**: Add to `docs/developer_guide/`
+4. **Main Library**: Update navigation in `docs/library/index.rst`
+
+### RST Formatting Standards
+
+- Use proper RST syntax with `::` for code blocks
+- Include blank lines after `::` before code content  
+- Use RST field lists: `:param name: description`
+- Test with `.\build.ps1` to verify formatting
+
+## 🔧 Architecture Details
+
+### Independent Manual System
+
+Each documentation section builds as a **separate Sphinx project**:
+
+- Separate `conf.py` configuration for each manual
+- Independent themes and styling
+- Cross-manual linking via absolute URLs
+- No shared toctree dependencies
+
+### Static File Serving
+
+FastAPI serves pre-built HTML files:
+- No runtime documentation generation
+- Fast serving of static assets
+- Professional landing page with navigation
+- Automatic index.html serving for directories
 core-docs developer
 ```
 

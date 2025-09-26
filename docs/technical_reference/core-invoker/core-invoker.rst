@@ -6,9 +6,7 @@ The core-invoker is a lambda function that is used to invoke the component compi
 as necessary by the specific appication template being used.  It also runs the "runner" to begin
 the execute Step Function that perfomrs the "deploy" or "plan" and "apply" steps.
 
-.. autosummary::
-   :toctree: _autosummary
-   :template: custom-module-template.rst
-   :recursive:
-
-   core_invoker
+.. automodule:: core_invoker
+   :members:
+   :undoc-members:
+   :show-inheritance:

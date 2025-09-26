@@ -5,9 +5,7 @@ AWS::RDS::Actions
 
 Actionlib AWS::RDS::Actions contains the services that are used to interact with AWS RDS.
 
-.. autosummary::
-   :toctree: _autosummary
-   :template: custom-module-template.rst
-   :recursive:
-
-   core_execute.actionlib.actions.aws.rds
+.. automodule:: core_execute.actionlib.actions.aws.rds
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,175 @@
+---
+ClientConfigRepo:
+  Type: AWS::CodeCommit::Repository
+  Properties:
+    RepositoryName: !Sub "${Client}-config"
+    RepositoryDescription: client configuration repo, used for facts.
+    Triggers:
+      - Name: codebuild-trigger
+        DestinationArn:
+          Ref: CodeCommitListenerLambdaArn
+        Events:
+          - createReference
+          - updateReference
+
+CoreAutomationRepo:
+  Type: AWS::CodeCommit::Repository
+  Properties:
+    RepositoryName: core-automation
+    RepositoryDescription: The core automation runner framework. Deployed from scripts.
+    Triggers:
+      - Name: codebuild-trigger
+        DestinationArn:
+          Ref: CodeCommitListenerLambdaArn
+        Events:
+          - createReference
+          - updateReference
+        Branches:  # Allow a limited number of non-master test branches
+          - master
+          - mergeforward  # Testing
+          - dev  # Testing
+
+CoreAutomationBuild:
+  Type: AWS::CodeBuild::Project
+  Properties:
+    Name: core-automation
+    Artifacts:
+      Type: NO_ARTIFACTS
+    Description: Deploy core-automation runner to AWS.
+    Environment:
+      ComputeType: BUILD_GENERAL1_SMALL
+      Image: !Ref CodeBuildImage
+      Type: LINUX_CONTAINER
+      EnvironmentVariables:
+        - {Name: BUCKET_NAME, Type: PLAINTEXT, Value: !Ref S3Bucket}
+    ServiceRole:
+      Ref: CoreCodeBuildRole
+    Source:
+      Location: !GetAtt [CoreAutomationRepo, CloneUrlHttp]
+      Type: CODECOMMIT
+      GitCloneDepth: 1
+      # See core-automation\buildspec.yaml
+
+CoreAutomationTeardown:
+  Type: AWS::CodeBuild::Project
+  Properties:
+    Name: core-automation-teardown
+    Artifacts:
+      Type: NO_ARTIFACTS
+    Description: Teardown development branches of core-automation that have been deployed to cloud.
+    Environment:
+      ComputeType: BUILD_GENERAL1_SMALL
+      Image: !Ref CodeBuildImage
+      Type: LINUX_CONTAINER
+      EnvironmentVariables:
+        - {Name: BUCKET_NAME, Type: PLAINTEXT, Value: !Ref S3Bucket}
+        - {Name: BRANCH, Type: PLAINTEXT, Value: ''}
+        - {Name: CLIENT, Type: PLAINTEXT, Value: !Ref Client}
+    ServiceRole:
+      Ref: CoreCodeBuildRole
+    Source:
+      Location: !GetAtt [CoreAutomationRepo, CloneUrlHttp]
+      Type: CODECOMMIT
+      GitCloneDepth: 1
+      BuildSpec: |
+        version: 0.2
+        phases:
+          pre_build:
+            commands:
+              - echo "CODEBUILD_SOURCE_VERSION=$CODEBUILD_SOURCE_VERSION"
+              # Don't allow master teardowns, ever
+              - if (echo "$BRANCH" | grep -qi "master"); then echo "Cannot teardown master branch, aborting."; exit 1; fi
+              # setup git creds to checkout facts repo
+              - git config --global credential.helper '!aws codecommit credential-helper $@'
+              - git config --global credential.UseHttpPath true
+              # clone facts
+              - git clone -q "https://git-codecommit.${AWS_REGION}.amazonaws.com/v1/repos/$CLIENT-config" /tmp/$CLIENT-config
+              # Permit execution of script
+              - chmod +x ./bin/teardown.sh
+          build:
+            commands:
+              - ./bin/teardown.sh all -c $CLIENT -b $BRANCH -n 1 --client-config-dir /tmp/$CLIENT-config
+
+CoreCodeBuildRole:
+  # Currently shared to all codebuild projects. Just add more statements.
+  # TODO Be nice to fan these out by core-* name. Feature!
+  Type: "AWS::IAM::Role"
+  Properties:
+    AssumeRolePolicyDocument:
+      Version: "2012-10-17"
+      Statement:
+        -
+          Effect: "Allow"
+          Principal:
+            Service:
+              - "codebuild.amazonaws.com"
+          Action:
+            - "sts:AssumeRole"
+    Path: "/"
+    Policies:
+      - PolicyName: "DeployCodeCommitToS3"
+        PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+            - Effect: "Allow"
+              Action:
+                - "lambda:InvokeFunction"
+              Resource:
+                Ref:
+                  InvokerLambdaArn
+            - Effect: "Allow"
+              Action:
+                - "logs:CreateLogGroup"
+                - "logs:CreateLogStream"
+                - "logs:PutLogEvents"
+              Resource:
+                - !Sub "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/codebuild/core-*"
+                - !Sub "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/codebuild/coreservices-*"
+                - !Sub "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/codebuild/${Client}-*"
+            - Effect: "Allow"
+              Action: "codecommit:GitPull"
+              Resource:
+                # core
+                - !GetAtt [ClientConfigRepo, Arn]
+                - !GetAtt [CoreAutomationRepo, Arn]
+                # allow access to certain repos, for CI/CD testing purposes
+                - !Sub "arn:aws:codecommit:${AWS::Region}:${AWS::AccountId}:demo-canary"
+                - !Sub "arn:aws:codecommit:${AWS::Region}:${AWS::AccountId}:${Client}-config"
+            - Effect: "Allow"
+              Action:
+                - "s3:List*"
+              Resource:
+                - !Sub "arn:aws:s3:::${S3Bucket}"
+            - Effect: "Allow"
+              Action:
+                - "s3:GetObject"
+                - "s3:PutObject"
+                - "s3:List*"
+              Resource:
+                - !Sub "arn:aws:s3:::${S3Bucket}"
+                - !Sub "arn:aws:s3:::${S3Bucket}/*"
+            - Effect: "Allow"
+              Action:
+                - "s3:DeleteObject"
+              Resource:
+                - !Sub "arn:aws:s3:::${S3Bucket}/facts/*"
+            - Effect: "Allow"
+              Action:
+                - "ssm:PutParameter"
+              Resource:
+                - !Sub "arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/*"
+            - Effect: Allow
+              Action:
+                - cloudformation:DeleteStack
+              Resource:
+                - !Sub "arn:aws:cloudformation:${AWS::Region}:${AWS::AccountId}:stack/core-automation-*"
+            - Effect: Allow  # TODO More granular permissions.
+              Action:
+                - cloudformation:*
+                - dynamodb:*
+                - iam:*
+                - lambda:*
+                - logs:*
+                - states:*
+              Resource:
+                - "*"

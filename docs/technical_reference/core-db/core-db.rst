@@ -9,48 +9,38 @@ the application infrastucture deployments.
 
 The database schema can be found :ref:`here...<database_schema>`
 
-Base Models
------------
+Core Database Module
+--------------------
 
-.. autosummary::
-   :toctree: _autosummary
-   :template: custom-module-template.rst
-   :recursive:
-
-   core_db.actions
-   core_db.response
-   core_db.dbhelper
-   core_db.constants
-   core_db.exceptions
+.. automodule:: core_db
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :no-index:
 
 FACTS Database
 --------------
 
-.. autosummary::
-   :toctree: _autosummary
-   :template: custom-module-template.rst
-   :recursive:
-
-   core_db.facter
-   core_db.registry
+.. automodule:: core_db.facter
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 Deployments Database
 --------------------
 
-.. autosummary::
-   :toctree: _autosummary
-   :template: custom-module-template.rst
-   :recursive:
-
-   core_db.item
+.. automodule:: core_db.item
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :no-index:
 
 Event Log Database
 ------------------
 
-.. autosummary::
-   :toctree: _autosummary
-   :template: custom-module-template.rst
-   :recursive:
-
-   core_db.event
+.. automodule:: core_db.event
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :no-index:
 

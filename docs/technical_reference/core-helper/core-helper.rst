@@ -10,9 +10,7 @@ the lambda functions that provide security and limits blast radius.
 AWS Helper functions
 --------------------
 
-.. autosummary::
-   :toctree: _autosummary
-   :template: custom-module-template.rst
-   :recursive:
-
-   core_helper.aws
+.. automodule:: core_helper.aws
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,5 +1,5 @@
-from .build import main
+from .server import app
 
-__version__ = "0.1.2-pre.1+19ebde9"
+__version__ = "0.1.2-pre.5+cf10478"
 
-__all__ = ["main", "__version__"]
+__all__ = ["app", "__version__"]

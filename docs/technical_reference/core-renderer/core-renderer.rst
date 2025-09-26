@@ -10,10 +10,13 @@ json nicely for you.
 Jinja2 Context Renderer
 -----------------------
 
-.. autosummary::
-   :toctree: _autosummary
-   :template: custom-module-template.rst
-   :recursive:
+.. automodule:: core_renderer.renderer
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
-   core_renderer.renderer
-   core_renderer.monkeypatch
+
+.. automodule:: core_renderer.filters
+   :members:
+   :undoc-members:
+   :show-inheritance:

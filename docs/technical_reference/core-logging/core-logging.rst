@@ -10,19 +10,15 @@ This tool provides a way to identify logs for each "identity" that is logging.
 Log Classes
 -----------
 
-.. autosummary::
-   :toctree: _autosummary
-   :template: custom-module-template.rst
-   :recursive:
-
-   core_logging.log_classes
+.. automodule:: core_logging.log_classes
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 Log functions
 -------------
 
-.. autosummary::
-   :toctree: _autosummary
-   :template: custom-module-template.rst
-   :recursive:
-
-   core_logging.log_interface
+.. automodule:: core_logging.log_interface
+   :members:
+   :undoc-members:
+   :show-inheritance:
