@@ -32,7 +32,7 @@ import sys
 import os
 
 # import os
-__version__ = "0.0.11-pre.3+978e0e9"
+__version__ = "0.1.2-pre.1+19ebde9"
 
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
