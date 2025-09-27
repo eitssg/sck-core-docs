@@ -54,7 +54,7 @@ package_list = [
     "sck-core-codecommit",
     "sck-core-api",
     "sck-core-cli",
-    ]
+]
 
 module_list = [
     os.path.join("sck-core-framework", "core_framework"),
@@ -72,7 +72,7 @@ module_list = [
     os.path.join("sck-core-codecommit", "core_codecommit"),
     os.path.join("sck-core-api", "core_api"),
     os.path.join("sck-core-cli", "core_cli"),
- ]
+]
 
 # Using a lambda function to insert paths
 print("Inserting module paths:")
@@ -131,15 +131,15 @@ autosummary_generate = True
 napoleon_attr_annotations = False
 
 autodoc_default_options = {
-   'members': True,
-   'undoc-members': True,
-   'show-inheritance': True,
-   'ignore-module-all': True,
+    "members": True,
+    "undoc-members": True,
+    "show-inheritance": True,
+    "ignore-module-all": True,
 }
 
 # Additional autodoc configuration to exclude tests
 autodoc_mock_imports = []
-autodoc_member_order = 'bysource'
+autodoc_member_order = "bysource"
 
 # Handle duplicate objects by only documenting the first occurrence
 autodoc_warningiserror = False
@@ -150,14 +150,16 @@ autosummary_generate = False
 autosummary_generate_overwrite = False
 autosummary_imported_members = False
 
+
 # Function to skip test modules and functions
 def skip_test_modules(app, what, name, obj, skip, options):
     """Skip documentation for test modules and test functions."""
-    if what == 'module' and ('test' in name or name.startswith('tests')):
+    if what == "module" and ("test" in name or name.startswith("tests")):
         return True
-    if what == 'function' and (name.startswith('test_') or '_test' in name):
+    if what == "function" and (name.startswith("test_") or "_test" in name):
         return True
     return skip
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -165,8 +167,8 @@ source_suffix = [".rst", ".md"]
 
 # Suppress specific warnings
 suppress_warnings = [
-    'autodoc',  # Ignore all autodoc warnings including duplicate object descriptions
-    'toc',      # Ignore toctree warnings  
+    "autodoc",  # Ignore all autodoc warnings including duplicate object descriptions
+    "toc",  # Ignore toctree warnings
 ]
 
 # Additional settings to reduce warnings
@@ -176,12 +178,14 @@ nitpick_ignore = []
 # Setup logging to filter duplicate warnings
 import logging
 
+
 class DuplicateFilter(logging.Filter):
     def filter(self, record):
-        return 'duplicate object description' not in record.getMessage()
+        return "duplicate object description" not in record.getMessage()
+
 
 # Add the filter to the sphinx logger
-sphinx_logger = logging.getLogger('sphinx')
+sphinx_logger = logging.getLogger("sphinx")
 sphinx_logger.addFilter(DuplicateFilter())
 
 # The master toctree document.
@@ -213,16 +217,16 @@ language = "en"
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
 exclude_patterns = [
-    "_build", 
-    "Thumbs.db", 
+    "_build",
+    "Thumbs.db",
     ".DS_Store",
     # Exclude all test directories from all sck modules
     "**/tests/**",
     "**/test_*.py",
     "**/*_test.py",
-    # Exclude any dev/example directories  
+    # Exclude any dev/example directories
     "**/dev/**",
-    "**/examples/**"
+    "**/examples/**",
 ]
 
 
@@ -250,24 +254,24 @@ html_theme = "sphinx_rtd_theme"
 # documentation.
 #
 html_theme_options = {
-    'prev_next_buttons_location': 'bottom',
-    'style_external_links': False,
-    'collapse_navigation': True,
-    'sticky_navigation': True,
-    'navigation_depth': 4,
-    'includehidden': True,
-    'titles_only': False
+    "prev_next_buttons_location": "bottom",
+    "style_external_links": False,
+    "collapse_navigation": True,
+    "sticky_navigation": True,
+    "navigation_depth": 4,
+    "includehidden": True,
+    "titles_only": False,
 }
 
 # Add context variables for custom footer
 html_context = {
-    'display_github': False,
-    'display_bitbucket': False,
-    'display_gitlab': False,
-    'conf_py_path': '',
-    'source_suffix': '.rst',
-    'library_home_url': '/docs',
-    'manual_title': 'Technical Reference'
+    "display_github": False,
+    "display_bitbucket": False,
+    "display_gitlab": False,
+    "conf_py_path": "",
+    "source_suffix": ".rst",
+    "library_home_url": "/docs",
+    "manual_title": "Technical Reference",
 }
 
 # Custom HTML to append to every page
@@ -368,7 +372,8 @@ texinfo_documents: list[tuple] = [
 
 def setup(app):
     """Sphinx setup function to register custom autodoc skip handlers."""
-    app.connect('autodoc-skip-member', skip_test_modules)
+    app.connect("autodoc-skip-member", skip_test_modules)
+
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

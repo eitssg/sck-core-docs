@@ -52,7 +52,7 @@ package_list = [
     "sck-core-codecommit",
     "sck-core-api",
     "sck-core-cli",
-    ]
+]
 
 module_list = [
     os.path.join("sck-core-framework", "core_framework"),
@@ -70,7 +70,7 @@ module_list = [
     os.path.join("sck-core-codecommit", "core_codecommit"),
     os.path.join("sck-core-api", "core_api"),
     os.path.join("sck-core-cli", "core_cli"),
- ]
+]
 
 # Using a lambda function to insert paths
 print("Inserting module paths:")
@@ -129,28 +129,30 @@ autosummary_generate = True
 napoleon_attr_annotations = False
 
 autodoc_default_options = {
-   'members': True,
-   'undoc-members': True,
-   'show-inheritance': True,
+    "members": True,
+    "undoc-members": True,
+    "show-inheritance": True,
 }
 
 # Additional autodoc configuration to exclude tests
 autodoc_mock_imports = []
-autodoc_member_order = 'bysource'
+autodoc_member_order = "bysource"
 
 # Autosummary configuration to prevent duplicates
 autosummary_generate = False
 autosummary_generate_overwrite = False
 autosummary_imported_members = False
 
+
 # Function to skip test modules and functions
 def skip_test_modules(app, what, name, obj, skip, options):
     """Skip documentation for test modules and test functions."""
-    if what == 'module' and ('test' in name or name.startswith('tests')):
+    if what == "module" and ("test" in name or name.startswith("tests")):
         return True
-    if what == 'function' and (name.startswith('test_') or '_test' in name):
+    if what == "function" and (name.startswith("test_") or "_test" in name):
         return True
     return skip
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -185,16 +187,16 @@ language = "en"
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
 exclude_patterns = [
-    "_build", 
-    "Thumbs.db", 
+    "_build",
+    "Thumbs.db",
     ".DS_Store",
     # Exclude all test directories from all sck modules
     "**/tests/**",
     "**/test_*.py",
     "**/*_test.py",
-    # Exclude any dev/example directories  
+    # Exclude any dev/example directories
     "**/dev/**",
-    "**/examples/**"
+    "**/examples/**",
 ]
 
 
@@ -315,7 +317,8 @@ texinfo_documents: list[tuple] = [
 
 def setup(app):
     """Sphinx setup function to register custom autodoc skip handlers."""
-    app.connect('autodoc-skip-member', skip_test_modules)
+    app.connect("autodoc-skip-member", skip_test_modules)
+
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

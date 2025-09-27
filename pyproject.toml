@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sck-core-docs"
-version = "0.1.2-pre.5+cf10478"
+version = "0.1.1"
 description = "Documentation for Core Automation"
 authors = ["James Barwick <jbarwick@me.com>"]
 license = "GPL-3.0-only"
@@ -20,7 +20,7 @@ include = [
 include = "core_docs"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = ">=3.11,<3.13"
 requests = "^2.32.3"
 cattrs = ">=23.1.2"
 sphinx = "^8.1.3"
