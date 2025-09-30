@@ -38,6 +38,7 @@ dependencies = [
    "sck-core-db",
    "sck-core-framework",
    "sck-core-api",
+   "python-docs-theme>=2025.2",
 ]
 
 [project.optional-dependencies]

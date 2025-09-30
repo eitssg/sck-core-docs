@@ -28,65 +28,18 @@
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 
-import sys
-import os
+# import sys
+# import os
 
 # import os
-__version__ = "0.1.2-pre.5+cf10478"
+__version__ = "1.3.0"
 
-sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
+# sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
-from my_pygments_style import MyCustomStyle  # noqa: F401, E402
+# from my_pygments_style import MyCustomStyle  # noqa: F401, E402
 
 # import sphinx_rtd_theme
 
-base = os.path.abspath(os.path.join(os.path.abspath(__file__), "..", "..", "..", ".."))
-
-package_list = [
-    "sck-core-framework",
-    "sck-core-db",
-    "sck-core-execute",
-    "sck-core-report",
-    "sck-core-deployspec",
-    "sck-core-component",
-    "sck-core-invoker",
-    "sck-core-organization",
-    "sck-core-codecommit",
-    "sck-core-api",
-    "sck-core-cli",
-]
-
-module_list = [
-    os.path.join("sck-core-framework", "core_framework"),
-    os.path.join("sck-core-framework", "core_helper"),
-    os.path.join("sck-core-framework", "core_logging"),
-    os.path.join("sck-core-framework", "core_renderer"),
-    os.path.join("sck-core-db", "core_db"),
-    os.path.join("sck-core-execute", "core_execute"),
-    os.path.join("sck-core-runner", "core_runner"),
-    os.path.join("sck-core-report", "core_report"),
-    os.path.join("sck-core-deployspec", "core_deployspec"),
-    os.path.join("sck-core-component", "core_component"),
-    os.path.join("sck-core-invoker", "core_invoker"),
-    os.path.join("sck-core-organization", "core_organization"),
-    os.path.join("sck-core-codecommit", "core_codecommit"),
-    os.path.join("sck-core-api", "core_api"),
-    os.path.join("sck-core-cli", "core_cli"),
-]
-
-# Using a lambda function to insert paths
-print("Inserting module paths:")
-for p in package_list:
-    mp = os.path.join(base, p)
-    if os.path.exists(mp):
-        sys.path.insert(0, mp)
-        print(f"  {mp}")
-    else:
-        print(f"  WARNING: Path does not exist: {mp}")
-
-print("Resulting System Paths:")
-for p in sys.path:
-    print(p)
 
 # -- General configuration ------------------------------------------------
 
@@ -112,30 +65,34 @@ extensions = [
     # "sphinx_autodoc_typehints",
 ]
 
-# Napoleon settings for Google style
-napoleon_google_docstring = True
-napoleon_numpy_docstring = False  # Disable NumPy style
-napoleon_include_init_with_doc = False
-napoleon_include_private_with_doc = False
-napoleon_include_special_with_doc = True
-napoleon_use_admonition_for_examples = False
-napoleon_use_admonition_for_notes = False
-napoleon_use_admonition_for_references = False
-napoleon_use_ivar = False
-napoleon_use_param = True
-napoleon_use_rtype = True
 
 autosummary_generate = True
 # napoleon_preprocess_types = False
 # napoleon_type_aliases = None
 napoleon_attr_annotations = False
 
-autodoc_default_options = {
-    "members": True,
-    "undoc-members": True,
-    "show-inheritance": True,
-    "ignore-module-all": True,
-}
+
+# Napoleon settings for Google style
+napoleon_google_docstring = True
+napoleon_numpy_docstring = True
+napoleon_include_init_with_doc = False
+napoleon_include_private_with_doc = False
+napoleon_include_special_with_doc = False
+napoleon_use_admonition_for_examples = False
+napoleon_use_admonition_for_notes = False
+napoleon_use_admonition_for_references = False
+napoleon_use_ivar = False
+napoleon_use_param = True
+napoleon_use_rtype = True
+napoleon_use_keyword = True
+napoleon_custom_sections = None
+
+# autodoc_default_options = {
+#     "members": True,
+#     "undoc-members": True,
+#     "show-inheritance": True,
+#     "ignore-module-all": True,
+# }
 
 # Additional autodoc configuration to exclude tests
 autodoc_mock_imports = []
@@ -195,7 +152,7 @@ master_doc = "index"
 version = __version__
 
 # The full version, including alpha/beta/rc tags.
-release = "1"
+release = "1.3.0"
 
 # Show / Hide 'Created using Sphinx' in the footer of each page
 html_show_sphinx = False
@@ -232,7 +189,7 @@ exclude_patterns = [
 
 # The name of the Pygments (syntax highlighting) style to use.
 # pygments_style = "monokai"
-pygments_style = "my_pygments_style.MyCustomStyle"
+# pygments_style = "my_pygments_style.MyCustomStyle"
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
@@ -244,42 +201,46 @@ todo_include_todos = True
 # a list of builtin themes.
 #
 # html_theme = 'alabaster'
+# html_theme = "python_docs_theme"
+# html_theme_path = [
+#    "./_themes",
+# ]
 html_theme = "sphinx_rtd_theme"
 # html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
-# sticky_navigation = True
+sticky_navigation = True
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
 html_theme_options = {
-    "prev_next_buttons_location": "bottom",
-    "style_external_links": False,
-    "collapse_navigation": True,
+    #     "prev_next_buttons_location": "bottom",
+    #     "style_external_links": False,
+    #     "collapse_navigation": True,
     "sticky_navigation": True,
-    "navigation_depth": 4,
-    "includehidden": True,
-    "titles_only": False,
+    #     "navigation_depth": 4,
+    #     "includehidden": True,
+    #     "titles_only": False,
 }
 
 # Add context variables for custom footer
 html_context = {
-    "display_github": False,
-    "display_bitbucket": False,
-    "display_gitlab": False,
-    "conf_py_path": "",
-    "source_suffix": ".rst",
+    #     "display_github": False,
+    #     "display_bitbucket": False,
+    #     "display_gitlab": False,
+    #     "conf_py_path": "",
+    #     "source_suffix": ".rst",
     "library_home_url": "/docs",
     "manual_title": "Technical Reference",
 }
 
 # Custom HTML to append to every page
-html_additional_pages = {}
+# html_additional_pages = {}
 
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
+# # Add any paths that contain custom static files (such as style sheets) here,
+# # relative to this directory. They are copied after the builtin static files,
+# # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 html_css_files = [
     "custom.css",

@@ -1,6 +1,10 @@
 version = 1
 revision = 3
 requires-python = ">=3.11, <3.13"
+resolution-markers = [
+    "python_full_version >= '3.12'",
+    "python_full_version < '3.12'",
+]
 
 [[package]]
 name = "alabaster"
@@ -1173,6 +1177,36 @@ wheels = [
 ]
 
 [[package]]
+name = "python-docs-theme"
+version = "2025.2"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "python_full_version < '3.12'",
+]
+dependencies = [
+    { name = "sphinx", marker = "python_full_version < '3.12'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/9d/a4/a79cfff5b38fe6517fdbe16f660f7ddc2f8e89d76b0dbb4ab3a792b1a23a/python_docs_theme-2025.2.tar.gz", hash = "sha256:dbf43d771453976a3f49c51c80cb44a9d302156be607d4f729552d95278ee3d8", size = 17037, upload-time = "2025-02-04T14:57:40.375Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/89/35/ada3da59ed82c35103f76a570eee18005d73cffb7209330e08c1effeb4ed/python_docs_theme-2025.2-py3-none-any.whl", hash = "sha256:6f2b234d5521d7a23eb91f3f597d99a3cc2c832ab764e23a4aaa245f5bd1e65b", size = 20045, upload-time = "2025-02-04T14:57:38.312Z" },
+]
+
+[[package]]
+name = "python-docs-theme"
+version = "2025.9.2"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "python_full_version >= '3.12'",
+]
+dependencies = [
+    { name = "sphinx", marker = "python_full_version >= '3.12'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/7f/54/14fd390ba123a0f1f112f63f7fb71a63682fd1af45721e7736f230874a8c/python_docs_theme-2025.9.2.tar.gz", hash = "sha256:20c84c17013ebf57b2c07bafd5b7619dc2149c5df2d604bc1882312af154b3e3", size = 24734, upload-time = "2025-09-17T14:53:55.697Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a4/55/8520958f5bc1bb1b50e6227e42ee85da066773f1be65180e975d515dd846/python_docs_theme-2025.9.2-py3-none-any.whl", hash = "sha256:ecb078ff379225bc755218ae1bd83f251faeb99564dd5f2f8e0c99991d82916b", size = 53744, upload-time = "2025-09-17T14:53:54.212Z" },
+]
+
+[[package]]
 name = "python-dotenv"
 version = "1.1.1"
 source = { registry = "https://pypi.org/simple" }
@@ -1694,6 +1728,8 @@ dependencies = [
     { name = "cattrs" },
     { name = "fastapi" },
     { name = "myst-parser" },
+    { name = "python-docs-theme", version = "2025.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
+    { name = "python-docs-theme", version = "2025.9.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
     { name = "requests" },
     { name = "sck-core-api" },
     { name = "sck-core-cli" },
@@ -1739,6 +1775,7 @@ requires-dist = [
     { name = "pytest-asyncio", marker = "extra == 'dev'", specifier = ">=0.25.0" },
     { name = "pytest-cov", marker = "extra == 'dev'", specifier = ">=6.0.0" },
     { name = "pytest-dotenv", marker = "extra == 'dev'", specifier = ">=0.5.2" },
+    { name = "python-docs-theme", specifier = ">=2025.2" },
     { name = "requests", specifier = ">=2.32.3" },
     { name = "sck-core-api", editable = "../sck-core-api" },
     { name = "sck-core-cli", editable = "../sck-core-cli" },

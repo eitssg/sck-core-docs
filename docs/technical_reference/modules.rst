@@ -5,7 +5,7 @@ Detailed information about the modules used in the application.
 
 .. toctree::
    :hidden:
-   :maxdepth: 1
+   :maxdepth: 5
 
    core-logging/core-logging
    core-framework/core-framework
