@@ -14,7 +14,9 @@ def replace_autosummary_in_file(filepath):
         content = f.read()
 
     # Find the module name from the autosummary directive
-    autosummary_pattern = r"\.\.[ ]+autosummary::\s*\n(?:\s+:[^:]+:[^\n]*\n)*\s+([a-zA-Z_][a-zA-Z0-9_]*(?:\.[a-zA-Z_][a-zA-Z0-9_]*)*)"
+    autosummary_pattern = (
+        r"\.\.[ ]+autosummary::\s*\n(?:\s+:[^:]+:[^\n]*\n)*\s+([a-zA-Z_][a-zA-Z0-9_]*(?:\.[a-zA-Z_][a-zA-Z0-9_]*)*)"
+    )
 
     def replace_func(match):
         module_name = match.group(1)

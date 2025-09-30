@@ -176,10 +176,7 @@ class DuplicateFilter(logging.Filter):
         if "duplicate object description" in message:
             return False
         # Filter RST formatting warnings from docstrings
-        if (
-            "Unexpected indentation" in message
-            or "Block quote ends without a blank line" in message
-        ):
+        if "Unexpected indentation" in message or "Block quote ends without a blank line" in message:
             if "__init__.py:docstring" in message or "generate_" in message:
                 return False
         return True
@@ -348,9 +345,7 @@ latex_document: list[tuple] = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages: list[tuple] = [
-    (master_doc, "core-automation", "core-automation Documentation", [author], 1)
-]
+man_pages: list[tuple] = [(master_doc, "core-automation", "core-automation Documentation", [author], 1)]
 
 
 # -- Options for Texinfo output -------------------------------------------

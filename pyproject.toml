@@ -1,12 +1,13 @@
-[tool.poetry]
+[project]
 name = "sck-core-docs"
-version = "0.1.1"
+version = "1.3.0"
 description = "Documentation for Core Automation"
-authors = ["James Barwick <jbarwick@me.com>"]
+authors = [{name="James Barwick", email="jbarwick@eits.com.sg"}]
 license = "GPL-3.0-only"
 readme = "README.md"
-
+maintainers = [{name="James Barwick", email="jbarwick@eits.com.sg"}]
 keywords = ["sck", "core", "aws", "cloud", "automation"]
+requires-python=">=3.11,<3.13"
 
 include = [
   "user-guide/*",
@@ -16,98 +17,77 @@ include = [
   "locale/**/LC_MESSAGES/*.mo",
 ]
 
-[[tool.poetry.packages]]
-include = "core_docs"
+dependencies = [
+   "requests (>=2.32.3)",
+   "cattrs (>=23.1.2)",
+   "sphinx (>=8.1.3)",
+   "myst-parser (>=4.0.0)",
+   "sphinx-rtd-theme (>=3.0.2)",
+   "sphinx-design (>=0.6.1)",
+   "sphinxcontrib-openapi (>=0.8.4)",
+   "sphinxcontrib-napoleon (>=0.7)",
+   "fastapi (>=0.115.4)",
+   "sck-core-cli",
+   "sck-core-organization",
+   "sck-core-invoker",
+   "sck-core-deployspec",
+   "sck-core-component",
+   "sck-core-runner",
+   "sck-core-report",
+   "sck-core-execute",
+   "sck-core-db",
+   "sck-core-framework",
+   "sck-core-api",
+]
 
-[tool.poetry.dependencies]
-python = ">=3.11,<3.13"
-requests = "^2.32.3"
-cattrs = ">=23.1.2"
-sphinx = "^8.1.3"
-myst-parser = "^4.0.0"
-sphinx-rtd-theme = "^3.0.2"
-sphinx_design = "^0.6.1"
-sphinxcontrib-openapi = "^0.8.4"
-sphinxcontrib-napoleon = "^0.7"
-fastapi = "^0.115.4"
+[project.optional-dependencies]
+dev = [
+   "pytest>=8.3.3",
+   "flake8>=7.1.1",
+   "cfn-lint>=1.22",
+   "pytest-asyncio>=0.25.0",
+   "boto3-stubs>=1.34.51",
+   "pytest-dotenv>=0.5.2",
+   "pytest-cov>=6.0.0",
+   "black>=24.10.0",
+   "uvicorn>=0.37.0",
+]
 
+[tool.hatch.build.targets.wheel]
+packages = ["core_docs"]
 
-[tool.poetry.dependencies.sck-core-cli]
-path = "../sck-core-cli"
-develop = true
+[tool.black]
+line-length = 132
+target-version = ["py311"]
+skip-string-normalization = true
 
-[tool.poetry.dependencies.sck-core-api]
-path = "../sck-core-api"
-develop = true
+# Use a proper multi-line regex (mirrors style used in framework module)
+exclude = '''
+/(
+      \.git
+    | \.mypy_cache
+    | \.pytest_cache
+    | build
+    | dist
+    | venv
+    | \.venv
+    | htmlcov
+)/
+'''
 
-[tool.poetry.dependencies.sck-core-organization]
-path = "../sck-core-organization"
-develop = true
-
-[tool.poetry.dependencies.sck-core-invoker]
-path = "../sck-core-invoker"
-develop = true
-
-[tool.poetry.dependencies.sck-core-deployspec]
-path = "../sck-core-deployspec"
-develop = true
-
-[tool.poetry.dependencies.sck-core-component]
-path = "../sck-core-component"
-develop = true
-
-[tool.poetry.dependencies.sck-core-runner]
-path = "../sck-core-runner"
-develop = true
-
-[tool.poetry.dependencies.sck-core-report]
-path = "../sck-core-report"
-develop = true
-
-[tool.poetry.dependencies.sck-core-execute]
-path = "../sck-core-execute"
-develop = true
-
-[tool.poetry.dependencies.sck-core-db]
-path = "../sck-core-db"
-develop = true
-
-[tool.poetry.dependencies.sck-core-framework]
-path = "../sck-core-framework"
-develop = true
-
-[tool.poetry.group.dev.dependencies]
-websockets = "^14.1"
-sphinx-autodoc-typehints = "^2.5.0"
-sphinxcontrib-httpdomain = "^1.8.1"
-sphinx-autobuild = "^2024.10.3"
-furo = "^2024.8.6"
-flake8 = "^7.1.1"
-pytest = "^8.3.3"
-cfn-lint = "^1.22.3"
-doc8 = "^1.1.2"
-black = "^24.10.0"
-pytest-dotenv = "^0.5.2"
-types-pygments = "^2.18.0.20240506"
-uvicorn = "^0.34.0"
-gunicorn = "^23.0.0"
-
-[tool.poetry-dynamic-versioning]
-enable = true
-bump = true
-ignore-untracked = true
-style = "semver"
-
-[tool.poetry-dynamic-versioning.substitution]
-files = ["core_docs/__init__.py", "core_docs/build.py", "docs/conf.py"]
+[tool.uv.sources]
+sck-core-framework = { path = "../sck-core-framework", editable = true }
+sck-core-db = { path = "../sck-core-db", editable = true }
+sck-core-cli = { path = "../sck-core-cli", editable = true }
+sck-core-organization = {path = "../sck-core-organization", editable = true}
+sck-core-invoker = {path = "../sck-core-invoker", editable = true}
+sck-core-deployspec = {path = "../sck-core-deployspec", editable = true}
+sck-core-component = {path = "../sck-core-component", editable = true}
+sck-core-runner = {path = "../sck-core-runner", editable = true}
+sck-core-report = {path = "../sck-core-report", editable = true}
+sck-core-execute = {path = "../sck-core-execute", editable = true}
+sck-core-api = { path = "../sck-core-api", editable = true }
 
 [build-system]
-requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
-build-backend = "poetry_dynamic_versioning.backend"
-
-# Create script to build.main
-[tool.poetry.scripts]
-build = "core_docs.build:main"
-
-[tool.esbonio.sphinx]
-pythonCommand = ["poetry", "run", "python"]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

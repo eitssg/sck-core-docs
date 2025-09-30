@@ -48,11 +48,7 @@ def fix_docstring_examples(content: str) -> Tuple[str, int]:
             continue
 
         # If we're in a docstring and find an Examples section with >>>
-        if (
-            in_docstring
-            and ("Examples" in line or "Example" in line)
-            and ("---" in line or ":" in line)
-        ):
+        if in_docstring and ("Examples" in line or "Example" in line) and ("---" in line or ":" in line):
             # Check if the next few lines contain >>> syntax
             has_interactive_examples = False
             j = i + 1
@@ -60,11 +56,7 @@ def fix_docstring_examples(content: str) -> Tuple[str, int]:
                 if ">>>" in lines[j]:
                     has_interactive_examples = True
                     break
-                if (
-                    lines[j].strip()
-                    and not lines[j].startswith("    ")
-                    and not lines[j].startswith("\t")
-                ):
+                if lines[j].strip() and not lines[j].startswith("    ") and not lines[j].startswith("\t"):
                     break  # Hit next section
                 j += 1
 
@@ -110,9 +102,7 @@ def fix_docstring_examples(content: str) -> Tuple[str, int]:
                             result_lines.append(" " * (indent + 4) + continuation)
                     elif stripped and not stripped.startswith("#"):
                         # Output line - convert to comment
-                        result_lines.append(
-                            " " * (indent + 4) + f"# Returns: {stripped}"
-                        )
+                        result_lines.append(" " * (indent + 4) + f"# Returns: {stripped}")
                     else:
                         result_lines.append(curr_line)
 
@@ -182,11 +172,7 @@ def find_python_files(directory: Path) -> List[Path]:
     python_files = []
     for root, dirs, files in os.walk(directory):
         # Skip certain directories
-        dirs[:] = [
-            d
-            for d in dirs
-            if not d.startswith(".") and d not in ["__pycache__", "node_modules"]
-        ]
+        dirs[:] = [d for d in dirs if not d.startswith(".") and d not in ["__pycache__", "node_modules"]]
 
         for file in files:
             if file.endswith(".py"):
@@ -196,12 +182,8 @@ def find_python_files(directory: Path) -> List[Path]:
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description="Fix AI-generated docstrings with >>> syntax"
-    )
-    parser.add_argument(
-        "path", help="Directory to process (recursively) or single Python file"
-    )
+    parser = argparse.ArgumentParser(description="Fix AI-generated docstrings with >>> syntax")
+    parser.add_argument("path", help="Directory to process (recursively) or single Python file")
     parser.add_argument(
         "--dry-run",
         action="store_true",

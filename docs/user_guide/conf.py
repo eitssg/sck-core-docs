@@ -336,9 +336,7 @@ latex_document: list[tuple] = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages: list[tuple] = [
-    (master_doc, "core-automation", "core-automation Documentation", [author], 1)
-]
+man_pages: list[tuple] = [(master_doc, "core-automation", "core-automation Documentation", [author], 1)]
 
 
 # -- Options for Texinfo output -------------------------------------------
