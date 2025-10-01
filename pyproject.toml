@@ -9,14 +9,6 @@ maintainers = [{name="James Barwick", email="jbarwick@eits.com.sg"}]
 keywords = ["sck", "core", "aws", "cloud", "automation"]
 requires-python=">=3.11,<3.13"
 
-include = [
-  "user-guide/*",
-  "developer-guide/*",
-  "api-guide/*",
-  "locale/**/LC_MESSAGES/*.po",
-  "locale/**/LC_MESSAGES/*.mo",
-]
-
 dependencies = [
    "requests (>=2.32.3)",
    "cattrs (>=23.1.2)",
