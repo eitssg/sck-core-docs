@@ -4,27 +4,6 @@
 - Precedence: Local first; then root `../../.github/...`.
 - Conventions: Keep docs consistent with UI/Backend contracts where referenced. Prefer reStructuredText for technical references, link to UI docs when UI behavior is discussed.
 
-## CRITICAL - Python Environment Activation
-
-**MANDATORY**: Before running ANY Python commands (including `python core_docs/build.py`, `.\build.ps1`, or Sphinx commands), you MUST activate the Poetry environment:
-
-1. **Check Poetry environment path**:
-   ```powershell
-   poetry env info --path
-   ```
-
-2. **Activate the environment**:
-   ```powershell
-   & "PATH_FROM_ABOVE\Scripts\Activate.ps1"
-   ```
-   
-3. **Then run Python commands**:
-   ```powershell
-   .\build.ps1 MODULE_NAME # e.g., user_guide, technical_reference, developer_guide, library, all  
-   ```
-
-**Never run Python commands without first activating the environment**. VSCode may not auto-activate when using centralized `.venvs` locations.
-
 ## ✅ IMPLEMENTED - Multi-Documentation Architecture
 
 **CURRENT STATE**: Multi-manual documentation system with independent builds and professional landing page.

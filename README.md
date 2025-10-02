@@ -57,11 +57,10 @@ The documentation is served via FastAPI with static file mounting:
 # Clone repository (already done if you're reading this)
 cd sck-core-docs
 
-# Install dependencies (Poetry manages Python environment)
-poetry install
+# Install dependencies (UV manages Python environment)
+uv sync --all-extras
 
 # Activate virtual environment  
-poetry shell
 ```
 
 ### Build & Serve Documentation  

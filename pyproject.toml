@@ -71,15 +71,15 @@ exclude = '''
 [tool.uv.sources]
 sck-core-framework = { path = "../sck-core-framework", editable = true }
 sck-core-db = { path = "../sck-core-db", editable = true }
-sck-core-cli = { path = "../sck-core-cli", editable = true }
-sck-core-organization = {path = "../sck-core-organization", editable = true}
-sck-core-invoker = {path = "../sck-core-invoker", editable = true}
-sck-core-deployspec = {path = "../sck-core-deployspec", editable = true}
-sck-core-component = {path = "../sck-core-component", editable = true}
-sck-core-runner = {path = "../sck-core-runner", editable = true}
-sck-core-report = {path = "../sck-core-report", editable = true}
-sck-core-execute = {path = "../sck-core-execute", editable = true}
+sck-core-execute = { path = "../sck-core-execute", editable = true }
+sck-core-report = { path = "../sck-core-report", editable = true }
+sck-core-runner = { path = "../sck-core-runner", editable = true }
+sck-core-component = { path = "../sck-core-component", editable = true }
+sck-core-deployspec = { path = "../sck-core-deployspec", editable = true }
+sck-core-invoker = { path = "../sck-core-invoker", editable = true }
+sck-core-organization = { path = "../sck-core-organization", editable = true }
 sck-core-api = { path = "../sck-core-api", editable = true }
+sck-core-cli = { path = "../sck-core-cli", editable = true }
 
 [build-system]
 requires = ["hatchling"]

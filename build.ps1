@@ -4,7 +4,8 @@ param (
 
 if ($docLibs -contains "all") {
 
-    poetry build
+    uv sync --all-extras
+    uv build
 
     Remove-Item -Recurse -Force "build" -ErrorAction SilentlyContinue
     New-Item -ItemType Directory -Path "build" -ErrorAction SilentlyContinue | Out-Null

@@ -8,9 +8,9 @@ by using pytest
 .. code-block:: bash
 
     # need to install the requirements
-    poetry install
+    uv sync --all-extras
 
-    pytest ./tests
+    uv run pytest ./tests
 
 All configurations are in the file pytest.ini which are provided in each repository submodule.  Fore core-db, the ini
 file looks like this:
@@ -26,7 +26,7 @@ file looks like this:
     env_files =
         .env
 
-You sould create the .env file so you can add your Environment Varaiables to your project
+You should create the .env file so you can add your Environment Variables to your project
 
 .. code-block:: ini
 
