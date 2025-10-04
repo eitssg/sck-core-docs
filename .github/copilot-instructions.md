@@ -1,5 +1,8 @@
 # Copilot Instructions (Submodule: sck-core-docs)
 
+## Plan → Approval → Execute (Mandatory)
+Documentation restructuring, build script changes, or content migration require an upfront plan and approval before execution.
+
 - Tech: Sphinx documentation (Python-driven).
 - Precedence: Local first; then root `../../.github/...`.
 - Conventions: Keep docs consistent with UI/Backend contracts where referenced. Prefer reStructuredText for technical references, link to UI docs when UI behavior is discussed.
