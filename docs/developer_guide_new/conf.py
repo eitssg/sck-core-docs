@@ -54,24 +54,6 @@ package_list = [
     "sck-core-cli",
 ]
 
-module_list = [
-    os.path.join("sck-core-framework", "core_framework"),
-    os.path.join("sck-core-framework", "core_helper"),
-    os.path.join("sck-core-framework", "core_logging"),
-    os.path.join("sck-core-framework", "core_renderer"),
-    os.path.join("sck-core-db", "core_db"),
-    os.path.join("sck-core-execute", "core_execute"),
-    os.path.join("sck-core-runner", "core_runner"),
-    os.path.join("sck-core-report", "core_report"),
-    os.path.join("sck-core-deployspec", "core_deployspec"),
-    os.path.join("sck-core-component", "core_component"),
-    os.path.join("sck-core-invoker", "core_invoker"),
-    os.path.join("sck-core-organization", "core_organization"),
-    os.path.join("sck-core-codecommit", "core_codecommit"),
-    os.path.join("sck-core-api", "core_api"),
-    os.path.join("sck-core-cli", "core_cli"),
-]
-
 # Using a lambda function to insert paths
 print("Inserting module paths:")
 for p in package_list:
