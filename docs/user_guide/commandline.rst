@@ -109,42 +109,36 @@ For more information about how to build your CI/CD pipelines, see the `href </do
 Container Mode
 --------------
 
-If you would like to run core-automation completely inside a docker container, you can do so by adding the "--local" option
-to the *core* command.
+If you would like to run core-automation completely inside a docker container, you can do so by 
+setting the environment variable LOCAL_MODE to true before running  the *core* command.
 
 Example:
 
 .. code-block:: bash
 
     # Deploy Core Templates from a container
-    core --local run --help
+    core run --help
 
     # Deploy CloudFormation Templates from a container
-    core --local deploy --help
+    core deploy --help
 
 .. note::
     Everything will run locally within a container except DynamoDB.  Even if you
     specify **--local** parameter, the DynamoDB will still be accessed remotely on
-    the **DYNAMODB_URL** endpoint sepcified in the environment variables.  You may also
-    use the enviornment variable **LOCAL_MODE=True** to specify that you are running locally
-    or inside a container.
+    the **DYNAMODB_URL** endpoint sepcified in the environment variables.  
 
 Pacakges, Files, and Artefacts will be stored locally within the contianer volume in the repository **local** folder.
 Of courese you can mount a shared volume to the container:
 
-    /core-automation/local/packages/<client>/<portfolio>/<app>/<branch>/<build>/packages.zip
-    /core-automation/local/artefacts/<client>/<portfolio>/<app>/<branch>/<build>/\*.yaml
-    /core-automation/local/files/<client>/<portfolio>/<app>/<branch>/<build>/install.exe
+    /core-automation/packages/<client>/<portfolio>/<app>/<branch>/<build>/packages.zip
+    /core-automation/artefacts/<client>/<portfolio>/<app>/<branch>/<build>/\*.yaml
 
-If you wish to specify a different location for the shared files, use the **LOCAL_ROOT** environment variable.
+If you wish to specify a different location for the shared files, use the **VOLUME** environment variable.
+Or, if you wish to use S3 for packages, files, and artefacts, set the **USE_S3** environment variable to true which
+means that VOLUME is ignored.
 
 .. code-block:: bash
 
     export LOCAL_MODE=true
-    export LOCAL_ROOT=/mnt/core-automation/local
-
-.. warning::
-    This option will prevent Core from uploading artefacts to S3 and will NOT use lambda.
-    However, the container **must** have access to the DynamoDB database.
-
-
+    export VOLUME=/mnt/core-automation
+    export USE_S3=true
